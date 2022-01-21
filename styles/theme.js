@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const buffer = 4;
-const timing = '.25s';
+const timing = '.10s';
 const easing = 'ease-in-out';
 
 export const theme = {
@@ -18,7 +18,13 @@ export const theme = {
   },
   color: {
     text: {
-      dark: '#22222A',
+      dark: '#11111A',
+      light: '#FAFAFA',
+      lightened: '#44444A'
+    },
+    opacity: {
+      light4: `rgba(255,255,255,.04)`,
+      light24: `rgba(255,255,255,.24)`,
     }
   },
   text: {
@@ -28,25 +34,31 @@ export const theme = {
     weight: {
       body: {
         regular: 400,
+        bold: 500,
       },
       title: {
-        regular: 400
+        regular: 400,
+        bold: 500,
       }
     },
     size: {
       body: {
-        regular: 16
+        small: 18,
+        regular: 24
       },
       title: {
-        regular: 24
+        regular: 24,
+        headline: 60
       }
     },
     lineHeight: {
       body: {
-        regular: 20
+        small: 22,
+        regular: 28
       },
       title: {
-        regular: 30
+        regular: 28,
+        headline: 60
       },
     }
   }
@@ -58,6 +70,7 @@ export const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0 !important;
     -webkit-overflow-scrolling: touch;
+    background: ${({ theme }) => theme.color.text.dark};
   }
 
   html {
