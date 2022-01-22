@@ -18,6 +18,17 @@ const StyledCTA = styled(Grid)`
   * {
     pointer-events: auto
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    width: 100%;
+    bottom: ${({ theme }) => theme.util.buffer*8}px;
+    * {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: ${({ theme }) => theme.util.buffer * 3}px;
+    }
+  }
 `;
 
 const CTA = ({}) => {

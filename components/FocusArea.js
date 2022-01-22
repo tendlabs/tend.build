@@ -18,6 +18,13 @@ const StyledFocusArea = styled.div`
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.text.light};
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    &:hover {
+      transform: none;
+      transition: ${({ theme }) => theme.util.transition};
+      background: ${({ theme }) => theme.color.text.light};
+    }
+  }
 `;
 const StyledIconArea = styled.div`
   display: flex;

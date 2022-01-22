@@ -8,6 +8,9 @@ const StyledPageContainer = styled(Div100vh)`
   overflow-y: scroll;
   overflow-x: hidden;
   padding: ${({ theme }) => theme.util.buffer * 24}px 0;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    padding-bottom: ${({ theme }) => theme.util.buffer * 48}px;
+  }
 `;
 
 const PageContainer = ({ children }) => {

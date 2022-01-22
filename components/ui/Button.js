@@ -15,6 +15,16 @@ const StyledButton = styled.div`
       color: ${({ theme }) => theme.color.text.dark};
     }
   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    &:hover {
+      transform: none;
+      transition: ${({ theme }) => theme.util.transition};
+      background: ${({ theme }) => theme.color.text.light};
+      * {
+        color: ${({ theme }) => theme.color.text.dark};
+      }
+    }
+  }
 `;
 
 const Button = ({ children }) => {
