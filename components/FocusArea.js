@@ -21,6 +21,11 @@ const StyledFocusArea = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     &:hover {
       transform: none;
+      transition: none;
+      background: ${({ theme }) => theme.color.opacity.light4};
+    }
+    &:active {
+      transform: none;
       transition: ${({ theme }) => theme.util.transition};
       background: ${({ theme }) => theme.color.text.light};
     }
