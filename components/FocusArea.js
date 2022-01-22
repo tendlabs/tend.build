@@ -78,7 +78,7 @@ const FocusArea = ({ title, description, type }) => {
               <Text title bold dark={isHovered}>{title}</Text>
             </Grid>
             <Grid item xs={12}>
-              <Text body small dark={isHovered}>{description}</Text>
+              <Text body small lightened={!isHovered} dark={isHovered}>{description}</Text>
             </Grid>
           </Grid>
         </Grid>
