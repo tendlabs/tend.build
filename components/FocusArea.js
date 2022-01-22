@@ -16,7 +16,7 @@ const StyledFocusArea = styled.div`
     cursor: pointer;
     transform: scale(1.04);
     transition: ${({ theme }) => theme.util.transition};
-    background: ${({ theme }) => theme.color.text.light};
+    background: ${({ theme }) => theme.color.opacity.light4};
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     &:hover {
@@ -37,7 +37,7 @@ const StyledIconArea = styled.div`
   justify-content: center;
   width: ${({ theme }) => theme.util.buffer * 12}px;
   height: ${({ theme }) => theme.util.buffer * 12}px;
-  background: ${(props) => props.isHovered ? props.theme.color.text.lightGray
+  background: ${(props) => props.isHovered ? props.theme.color.opacity.light4
     : props.theme.color.opacity.light4
   };
   border-radius: ${({ theme }) => theme.util.radiusLarge}px;
@@ -71,7 +71,7 @@ const FocusArea = ({ title, description, type }) => {
                         : type === "Systems" ? "layer"
                           : null
                   }
-                  dark={isHovered}
+                  // dark={isHovered}
                 />
               </StyledIconArea>
             </Grid>
@@ -80,10 +80,10 @@ const FocusArea = ({ title, description, type }) => {
         <Grid item>
           <Grid container spacing={3}>
             <Grid item xs={12}>
-              <Text title bold dark={isHovered}>{title}</Text>
+              <Text title bold>{title}</Text>
             </Grid>
             <Grid item xs={12}>
-              <Text body small lightened={!isHovered} dark={isHovered}>{description}</Text>
+              <Text body small lightened={!isHovered}>{description}</Text>
             </Grid>
           </Grid>
         </Grid>
