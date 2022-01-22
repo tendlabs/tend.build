@@ -7,8 +7,8 @@ import {
 } from '@styled-icons/boxicons-solid'
 
 const StyledIcon = styled.span`
-  width: ${({ theme }) => theme.util.buffer * 6}px;
-  height: ${({ theme }) => theme.util.buffer * 6}px;
+  width: ${(props) => props.size ? props.size : props.theme.util.buffer * 6}px;
+  height: ${(props) => props.size ? props.size : props.theme.util.buffer * 6}px;
   display: flex;
   align-items: center;
   justify-content: center;
