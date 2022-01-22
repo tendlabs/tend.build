@@ -14,7 +14,7 @@ const StyledFocusArea = styled.div`
   transition: ${({ theme }) => theme.util.transition};
   &:hover {
     cursor: pointer;
-    transform: scale(1.04) rotate(-1deg);
+    transform: scale(1.04);
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.text.light};
   }
