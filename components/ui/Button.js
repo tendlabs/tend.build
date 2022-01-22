@@ -21,6 +21,7 @@ const StyledButton = styled.div`
       transition: ${({ theme }) => theme.util.transition};
       background: ${({ theme }) => theme.color.text.light};
       * {
+        backdrop-filter: blur(4px);
         color: ${({ theme }) => theme.color.text.dark};
       }
     }

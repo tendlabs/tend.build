@@ -18,16 +18,24 @@ const StyledFocusArea = styled.div`
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.opacity.light4};
   }
+  &:active {
+    cursor: pointer;
+    transform: scale(1.04);
+    transition: ${({ theme }) => theme.util.transition};
+    background: ${({ theme }) => theme.color.opacity.light8};
+  }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    padding: ${({ theme }) => theme.util.buffer * 6}px;
     &:hover {
       transform: none;
       transition: none;
       background: ${({ theme }) => theme.color.opacity.light4};
     }
     &:active {
-      transform: none;
+      cursor: pointer;
+      transform: scale(1.04);
       transition: ${({ theme }) => theme.util.transition};
-      background: ${({ theme }) => theme.color.text.light};
+      background: ${({ theme }) => theme.color.opacity.light8};
     }
   }
 `;
@@ -46,6 +54,17 @@ const StyledIconArea = styled.div`
     transform: scale(1.4) rotate(-12deg);
     transition: ${({ theme }) => theme.util.transition};
   `}
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    ${(props) => props.isHovered &&`
+      transform: none;
+      transition: none;
+    `}
+  }
+`;
+const StyledTextArea = styled(Grid)`
+  * {
+    transition: ${({ theme }) => theme.util.transition};
+  }
 `;
 
 const FocusArea = ({ title, description, type }) => {
@@ -77,16 +96,16 @@ const FocusArea = ({ title, description, type }) => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
-          <Grid container spacing={3}>
+        <StyledTextArea item>
+          <Grid container spacing={4}>
             <Grid item xs={12}>
               <Text title bold>{title}</Text>
             </Grid>
             <Grid item xs={12}>
-              <Text body small lightened={!isHovered}>{description}</Text>
+              <Text body small lightened>{description}</Text>
             </Grid>
           </Grid>
-        </Grid>
+        </StyledTextArea>
       </Grid>
     </StyledFocusArea>
 

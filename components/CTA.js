@@ -12,7 +12,7 @@ const StyledCTA = styled(Grid)`
   right: 0;
   margin: 0 auto;
   width: ${({ theme }) => theme.breakpoint.xs}px;
-  padding: 0 ${({ theme }) => theme.util.buffer*4}px;
+  padding: 0 ${({ theme }) => theme.util.buffer * 6}px;
   pointer-events: none;
   z-index: 1;
   * {

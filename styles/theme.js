@@ -26,7 +26,9 @@ export const theme = {
     },
     opacity: {
       light4: `rgba(255,255,255,.04)`,
+      light8: `rgba(255,255,255,.08)`,
       light24: `rgba(255,255,255,.24)`,
+      light48: `rgba(255,255,255,.48)`,
     }
   },
   text: {
@@ -36,11 +38,11 @@ export const theme = {
     weight: {
       body: {
         regular: 400,
-        bold: 600,
+        bold: 500,
       },
       title: {
         regular: 400,
-        bold: 600,
+        bold: 500,
       }
     },
     size: {
@@ -71,7 +73,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body, html {
     margin: 0 !important;
-    -webkit-overflow-scrolling: touch;
     background: ${({ theme }) => theme.color.text.dark};
   }
 
