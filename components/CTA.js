@@ -14,6 +14,7 @@ const StyledCTA = styled(Grid)`
   width: ${({ theme }) => theme.breakpoint.xs}px;
   padding: 0 ${({ theme }) => theme.util.buffer*4}px;
   pointer-events: none;
+  z-index: 1;
   * {
     pointer-events: auto
   }

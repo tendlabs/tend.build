@@ -10,6 +10,10 @@ const StyledButton = styled.div`
     cursor: pointer;
     transform: scale(1.15) rotate(-2deg);
     transition: ${({ theme }) => theme.util.transition};
+    background: ${({ theme }) => theme.color.text.light};
+    * {
+      color: ${({ theme }) => theme.color.text.dark};
+    }
   }
 `;
 

@@ -46,17 +46,26 @@ export default function Home() {
             </Grid>
 
             <Grid item xs={12}>
-              <Grid container spacing={12}>
+              <Grid container spacing={8}>
                 {FocusAreas.map((f,i) =>
                   <Grid item xs={12}>
                     <FocusArea
                       title={f.title}
                       description={f.description}
                       type={f.type}
+                      icon={f.icon}
                       url={f.url}
                     />
                   </Grid>
                   )}
+              </Grid>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Grid container spacing={12}>
+                <Grid item>
+                  <Text body>&copy; 2022 Tend Labs LLC</Text>
+                </Grid>
               </Grid>
             </Grid>
 
@@ -75,18 +84,19 @@ const FocusAreas = [
     title: 'Tend Garden',
     description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
     type: 'Incubation',
-    url: '/'
-  },
-  {
-    title: 'Little Universe',
-    description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-    type: 'Impact',
+    icon: 'rocket',
     url: '/'
   },
   {
     title: 'Radius',
     description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
     type: 'Systems',
+    url: '/'
+  },
+  {
+    title: 'Little Universe',
+    description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
+    type: 'Impact',
     url: '/'
   },
 ]

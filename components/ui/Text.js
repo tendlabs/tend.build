@@ -6,7 +6,9 @@ const StyledText = styled.span`
   font-family: ${({ theme }) => theme.text.family.regular};
 
   color: ${(props) => props.lightened ? props.theme.color.opacity.light24
-    : props.theme.color.text.light
+    : props.dark ? props.theme.color.text.dark
+      : props.emphasis ? props.theme.color.primary.blue
+        : props.theme.color.text.light
   };
 
   font-weight: ${(props) => (props.title && props.bold) ? props.theme.text.weight.title.bold

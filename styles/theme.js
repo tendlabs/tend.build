@@ -9,6 +9,7 @@ export const theme = {
     buffer,
     timing,
     transition: `all ${timing} ${easing}`,
+    radiusLarge: 48
   },
   breakpoint: {
     xs: 640,
@@ -20,6 +21,7 @@ export const theme = {
     text: {
       dark: '#11111A',
       light: '#FAFAFA',
+      lightGray: '#EAEAEA',
       lightened: '#44444A'
     },
     opacity: {
@@ -34,11 +36,11 @@ export const theme = {
     weight: {
       body: {
         regular: 400,
-        bold: 500,
+        bold: 600,
       },
       title: {
         regular: 400,
-        bold: 500,
+        bold: 600,
       }
     },
     size: {

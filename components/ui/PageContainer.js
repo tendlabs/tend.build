@@ -7,7 +7,7 @@ const StyledPageContainer = styled(Div100vh)`
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  padding: ${({ theme }) => theme.util.buffer * 12}px 0;
+  padding: ${({ theme }) => theme.util.buffer * 24}px 0;
 `;
 
 const PageContainer = ({ children }) => {
