@@ -47,7 +47,7 @@ export default function Home() {
             <Grid item xs={12}>
               <Grid container spacing={8}>
                 {FocusAreas.map((f,i) =>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} key={i}>
                     <FocusArea
                       title={f.title}
                       description={f.description}
