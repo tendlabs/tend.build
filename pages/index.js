@@ -10,6 +10,7 @@ import CTA from '../components/CTA'
 import FocusArea from '../components/FocusArea'
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -24,8 +25,6 @@ export default function Home() {
 
       <PageContainer>
         <MaxWidth>
-
-          <CTA/>
 
           <Grid container spacing={24}>
 
@@ -48,7 +47,7 @@ export default function Home() {
             <Grid item xs={12}>
               <Grid container spacing={8}>
                 {FocusAreas.map((f,i) =>
-                  <Grid item xs={12} key={i}>
+                  <Grid item xs={12}>
                     <FocusArea
                       title={f.title}
                       description={f.description}

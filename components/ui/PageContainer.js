@@ -1,5 +1,11 @@
 import styled from "styled-components"
 import Div100vh from 'react-div-100vh'
+import { useRef, useState } from 'react'
+import React from 'react'
+import { useElementScroll } from 'framer-motion'
+
+import MaxWidth from './MaxWidth'
+import CTA from '../CTA'
 
 const StyledPageContainer = styled(Div100vh)`
   position: fixed;
@@ -16,8 +22,20 @@ const StyledPageContainer = styled(Div100vh)`
 `;
 
 const PageContainer = ({ children }) => {
+  const ref = useRef(null)
+  const [progress, setProgress] = useState(0)
+  const { scrollYProgress } = useElementScroll(ref)
+  scrollYProgress.onChange(setProgress)
+
+  // console.log(progress)
+
   return (
-    <StyledPageContainer>{children}</StyledPageContainer>
+    <StyledPageContainer ref={ref}>
+      <MaxWidth>
+        <CTA emphasis={progress < .1 ? true : false}/>
+      </MaxWidth>
+      {children}
+    </StyledPageContainer>
   )
 }
 

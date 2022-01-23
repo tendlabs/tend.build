@@ -31,11 +31,14 @@ const StyledCTA = styled(Grid)`
   }
 `;
 
-const CTA = ({}) => {
+const CTA = ({ emphasis }) => {
+
+  // console.log(emphasis)
+
   return (
     <Grid container>
       <StyledCTA item alignItems="flex-end">
-        <Button>
+        <Button emphasis={emphasis}>
           <Text body>with@tend.build</Text>
         </Button>
       </StyledCTA>
