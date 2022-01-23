@@ -14,11 +14,12 @@ const StyledPageContainer = styled(Div100vh)`
   overflow-y: scroll;
   overflow-x: hidden;
   padding: ${({ theme }) => theme.util.buffer * 24}px 0;
+  z-index: 100;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     padding-top: ${({ theme }) => theme.util.buffer * 6}px;
     padding-bottom: ${({ theme }) => theme.util.buffer * 48}px;
+    -webkit-overflow-scrolling: touch !important;
   }
-  -webkit-overflow-scrolling: touch;
 `;
 
 const PageContainer = ({ children }) => {
@@ -27,14 +28,15 @@ const PageContainer = ({ children }) => {
   const { scrollYProgress } = useElementScroll(ref)
   scrollYProgress.onChange(setProgress)
 
-  // console.log(progress)
-
   return (
     <StyledPageContainer ref={ref}>
+
       <MaxWidth>
         <CTA emphasis={progress < .1 ? true : false}/>
       </MaxWidth>
+
       {children}
+
     </StyledPageContainer>
   )
 }

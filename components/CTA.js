@@ -13,8 +13,8 @@ const StyledCTA = styled(Grid)`
   margin: 0 auto;
   width: ${({ theme }) => theme.breakpoint.xs}px;
   padding: 0 ${({ theme }) => theme.util.buffer * 6}px;
-  pointer-events: none;
   z-index: 1;
+  pointer-events: none;
   * {
     pointer-events: auto
   }
@@ -26,14 +26,12 @@ const StyledCTA = styled(Grid)`
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: ${({ theme }) => theme.util.buffer * 3}px;
+      padding: ${({ theme }) => theme.util.buffer * 2}px;
     }
   }
 `;
 
 const CTA = ({ emphasis }) => {
-
-  // console.log(emphasis)
 
   return (
     <Grid container>
