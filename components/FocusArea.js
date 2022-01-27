@@ -71,7 +71,7 @@ const StyledTextArea = styled(Grid)`
 const ConditionalLink = ({ children, url }) => {
   return (
     url ?
-      <a href={url} target="_blank">{children}</a>
+      <a href={url} target="_blank" rel="noreferrer">{children}</a>
     :
       <>{children}</>
   )
