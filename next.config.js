@@ -1,7 +1,7 @@
-// const debug = process.env.DEBUG === 'on'
+const usePrefix = process.env.DEPLOY === 'true'
 
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: '/www/',
+  assetPrefix: usePrefix ? '/www/' : undefined,
   trailingSlash: true
 }
