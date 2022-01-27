@@ -9,7 +9,8 @@
     "deploy:build": "rm -rf node_modules/.cache && rm -rf ./out && DEPLOY=true ./node_modules/.bin/next build && DEPLOY=true ./node_modules/.bin/next export && cp ./serve.json ./out/",
     "deploy:serve": "./node_modules/.bin/serve -l 3333 ./out",
     "deploy:test": "npm run deploy:build; npm run deploy:serve & open http://localhost:3333",
-    "deploy": "npm run deploy:build && git checkout main && echo 'deleting if gh-pages exists locally.. This might fail and thats ok.' && git branch -D gh-pages; echo '\n\nLet us deploy.' && git checkout -b gh-pages && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git push origin :gh-pages && git subtree push --prefix out origin gh-pages && git checkout main && git branch -D gh-pages"
+    "deploy:deleteremote": "npm run deploy:build && git checkout main && echo 'deleting if gh-pages exists locally.. This might fail and thats ok.' && git branch -D gh-pages; echo '\n\nLet us deploy.' && git checkout -b gh-pages && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git push origin :gh-pages && git subtree push --prefix out origin gh-pages && git checkout main && git branch -D gh-pages",
+    "deploy": "npm run deploy:build && git checkout main && echo 'deleting if gh-pages exists locally.. This might fail and thats ok.' && git branch -D gh-pages; echo '\n\nLet us deploy.' && git checkout -b gh-pages && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && git checkout main && git branch -D gh-pages"
   },
   "dependencies": {
     "framer-motion": "^6.0.0",
