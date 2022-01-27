@@ -2,6 +2,6 @@
 
 module.exports = {
   reactStrictMode: true,
-  // assetPrefix: debug ? '' : '/www/',
+  assetPrefix: '/www/',
   trailingSlash: true
 }
