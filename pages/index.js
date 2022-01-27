@@ -6,7 +6,6 @@ import {
   Text,
   Grid
 } from '../components/ui'
-import CTA from '../components/CTA'
 import FocusArea from '../components/FocusArea'
 
 export default function Home() {

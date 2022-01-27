@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { useMediaQuery } from 'react-responsive'
 
+import { theme } from '../styles/theme'
 import {
   Text,
   Button,
@@ -36,9 +38,14 @@ const StyledCTA = styled(Grid)`
 const StyledTextContainer = styled.div`
   width: ${({ theme }) => theme.util.buffer * 44}px;
   height: ${({ theme }) => theme.text.size.body.regular}px;
-`;
+  position: relative;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    height: ${({ theme }) => theme.text.size.body.small * 2}px;
+    width: 100%;
+  }
+  `;
 const StyledTextWrapper = styled(motion.span)`
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -58,6 +65,10 @@ const CTA = ({ emphasis }) => {
     ], 1000)
     return () => clearTimeout(timer)
   }, [emailCopied])
+
+  const isXs = useMediaQuery(
+    { maxDeviceWidth: theme.breakpoint.xs },
+  )
 
   const variants = {
     fromBottom: {
@@ -89,8 +100,8 @@ const CTA = ({ emphasis }) => {
         <CopyToClipboard text="with@tend.build" onCopy={() => setEmailCopied(true)}>
           <Button
             emphasis={emphasis}
-            onMouseEnter={() => setCtaHovered(true)}
-            onMouseLeave={() => setCtaHovered(false)}
+            onMouseEnter={isXs ? null : () => setCtaHovered(true)}
+            onMouseLeave={isXs ? null : () => setCtaHovered(false)}
           >
             <StyledTextContainer>
               <StyledTextWrapper
@@ -102,15 +113,21 @@ const CTA = ({ emphasis }) => {
               >
                 <Text body>with@tend.build</Text>
               </StyledTextWrapper>
-              <StyledTextWrapper
-                variants={variants}
-                animate={(ctaHovered && !emailCopied) ? `centered`
-                  : (emailCopied && ctaHovered) ? `toTop`
-                    : `toTop`
-                }
-              >
-                <Text body>Copy email</Text>
-              </StyledTextWrapper>
+
+              {isXs ?
+                null
+              :
+                <StyledTextWrapper
+                  variants={variants}
+                  animate={(ctaHovered && !emailCopied) ? `centered`
+                    : (emailCopied && ctaHovered) ? `fromBottom`
+                      : `toTop`
+                  }
+                >
+                  <Text body>Copy email</Text>
+                </StyledTextWrapper>
+              }
+
               <StyledTextWrapper
                 variants={variants}
                 animate={emailCopied ? `centered` : `toTop`}
