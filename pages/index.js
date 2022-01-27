@@ -8,7 +8,7 @@ import {
 } from '../components/ui'
 import FocusArea from '../components/FocusArea'
 
-export default function Home() {
+export default function Home({ focusAreas }) {
 
   return (
     <>
@@ -45,7 +45,7 @@ export default function Home() {
 
             <Grid item xs={12}>
               <Grid container spacing={8}>
-                {FocusAreas.map((f,i) =>
+                {focusAreas.map((f,i) =>
                   <Grid item xs={12} key={i}>
                     <FocusArea
                       title={f.title}
@@ -75,25 +75,30 @@ export default function Home() {
     </>
   )
 }
-
-const FocusAreas = [
-  {
-    title: 'Tend Garden',
-    description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-    type: 'Incubation',
-    icon: 'rocket',
-    url: '/'
-  },
-  {
-    title: 'Radius',
-    description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-    type: 'Systems',
-    url: '/'
-  },
-  {
-    title: 'Little Universe',
-    description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-    type: 'Impact',
-    url: '/'
-  },
-]
+export async function getStaticProps(context) {
+  return {
+    props: {
+      focusAreas: [
+        {
+          title: 'Tend Gardens',
+          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
+          type: 'Incubation',
+          icon: 'rocket',
+          url: '/'
+        },
+        {
+          title: 'Radius',
+          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
+          type: 'Systems',
+          url: '/'
+        },
+        {
+          title: 'Little Universe',
+          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
+          type: 'Impact',
+          url: '/'
+        },
+      ]
+    }, // will be passed to the page component as props
+  }
+}

@@ -40,4 +40,8 @@ function App({ Component, pageProps }) {
 
 }
 
+export async function getStaticProps(context) {
+  return {}
+}
+
 export default App
