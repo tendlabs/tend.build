@@ -4,6 +4,7 @@ import {
   Rocket,
   Megaphone,
   Layer,
+  Copy
 } from '@styled-icons/boxicons-solid'
 
 const StyledIcon = styled.span`
@@ -40,6 +41,8 @@ const Icon =({
     source = <Megaphone />
   } else if (type === 'layer') {
     source = <Layer />
+  } else if (type === 'copy') {
+    source = <Copy />
   }
 
   return (

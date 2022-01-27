@@ -27,6 +27,7 @@ const StyledText = styled.span`
         : (props.body) ? props.theme.text.lineHeight.body.regular
           : null
   }px;
+  text-align: ${(props) => props.center ? 'center' : 'auto'};
 `;
 
 const Text = ({

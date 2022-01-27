@@ -6,6 +6,7 @@ const StyledButton = styled.div`
   background: ${(props) => props.emphasis ? props.theme.color.text.light : props.theme.color.opacity.light4};
   transition: ${({ theme }) => theme.util.transition};
   backdrop-filter: blur(8px);
+  overflow: hidden;
   * {
     color: ${(props) => props.emphasis ? props.theme.color.text.dark : props.theme.color.text.light};
   }
