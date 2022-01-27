@@ -72,7 +72,7 @@ const CTA = ({ emphasis }) => {
 
   const variants = {
     fromBottom: {
-      opacity: 1,
+      opacity: 0,
       y: 100,
       transition: {
         duration: .15
@@ -86,7 +86,7 @@ const CTA = ({ emphasis }) => {
       }
     },
     toTop: {
-      opacity: 1,
+      opacity: 0,
       y: -100,
       transition: {
         duration: .15
