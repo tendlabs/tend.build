@@ -62,7 +62,7 @@ export default function Home({ focusAreas }) {
             <Grid item xs={12}>
               <Grid container spacing={12}>
                 <Grid item>
-                  <Text body small>&copy; 2022 Tend Labs LLC</Text>
+                  <Text body small lightened>&copy; 2022 Tend Labs LLC</Text>
                 </Grid>
               </Grid>
             </Grid>
