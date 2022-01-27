@@ -30,7 +30,7 @@ export default function Home({ focusAreas }) {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6}>
-                  <Text title headline bold>Tend Laboratories</Text>
+                  <Text title headline bold>Tend</Text>
                 </Grid>
               </Grid>
             </Grid>
