@@ -6,9 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy:build": "rm -rf node_modules/.cache && DEBUG=off ./node_modules/.bin/next build && DEBUG=off ./node_modules/.bin/next export",
+    "deploy:build": "rm -rf node_modules/.cache && rm -rf ./out && ./node_modules/.bin/next build && ./node_modules/.bin/next export && cp ./serve.json ./out/",
     "deploy:serve": "./node_modules/.bin/serve -l 3333 ./out",
-    "deploy": "DEBUG=off npm run deploy:build && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git push origin main && git push origin :gh-pages && git subtree push --prefix out origin gh-pages"
+    "deploy": "npm run deploy:build && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git push origin :gh-pages && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "framer-motion": "^6.0.0",

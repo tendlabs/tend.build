@@ -1,7 +1,7 @@
-const debug = process.env.DEBUG !== 'off'
+// const debug = process.env.DEBUG === 'on'
 
 module.exports = {
   reactStrictMode: true,
-  assetPrefix: debug ? '/tend.build/' : '',
+  // assetPrefix: debug ? '' : '/www/',
   trailingSlash: true
 }
