@@ -90,7 +90,6 @@ const FocusArea = ({ title, description, type }) => {
                         : type === "Systems" ? "layer"
                           : null
                   }
-                  // dark={isHovered}
                 />
               </StyledIconArea>
             </Grid>

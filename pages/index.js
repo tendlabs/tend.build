@@ -38,7 +38,7 @@ export default function Home({ focusAreas }) {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={12}>
-                  <Text body>We create unique value by building software, teams, and systems. We fly under the radar so the people, causes, and products we work with win.</Text>
+                  <Text body>We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive.</Text>
                 </Grid>
               </Grid>
             </Grid>
@@ -80,22 +80,22 @@ export async function getStaticProps(context) {
     props: {
       focusAreas: [
         {
-          title: 'Tend Gardens',
-          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
+          title: 'Tend Labs',
+          description: 'We partner with founders to ship critical-path product. We work together to materialize vision, plan roadmaps, write code to scale up and move fast. Zero to one.',
           type: 'Incubation',
           icon: 'rocket',
           url: '/'
         },
         {
-          title: 'Radius',
-          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-          type: 'Systems',
+          title: 'Little Universe',
+          description: 'We build products for amazing impact-focused organizations and businesses. We employ trust-driven agile practices to build and scale beautiful, accessible technology that drives momentum for causes that matter.',
+          type: 'Impact',
           url: '/'
         },
         {
-          title: 'Little Universe',
-          description: 'Digital design studio investing in our shared future. Building trust, tech, and tools for nonprofits.',
-          type: 'Impact',
+          title: 'Radius',
+          description: 'We create curated design systems conceptualized, built, and shipped for our client’s products. We believe that when you need to move fast, constraint is empowering. We ship the polished building blocks that unify a team and empower growth.',
+          type: 'Systems',
           url: '/'
         },
       ]

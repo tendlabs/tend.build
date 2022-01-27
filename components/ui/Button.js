@@ -12,7 +12,7 @@ const StyledButton = styled.div`
   }
   &:hover {
     cursor: pointer;
-    transform: scale(1.15) rotate(-2deg);
+    transform: scale(1.15);
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.text.light};
     * {
