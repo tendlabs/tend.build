@@ -84,19 +84,21 @@ export async function getStaticProps(context) {
           description: 'We partner with founders to ship critical-path product. We work together to materialize vision, plan roadmaps, write code to scale up and move fast. Zero to one.',
           type: 'Incubation',
           icon: 'rocket',
-          url: '/'
+          url: null
         },
         {
           title: 'Little Universe',
           description: 'We build products for amazing impact-focused organizations and businesses. We employ trust-driven agile practices to build and scale beautiful, accessible technology that drives momentum for causes that matter.',
           type: 'Impact',
-          url: '/'
+          icon: 'megaphone',
+          url: 'https://www.littleuniverse.com/'
         },
         {
           title: 'Radius',
           description: 'We create curated design systems conceptualized, built, and shipped for our client’s products. We believe that when you need to move fast, constraint is empowering. We ship the polished building blocks that unify a team and empower growth.',
           type: 'Systems',
-          url: '/'
+          icon: 'layer',
+          url: null
         },
       ]
     }, // will be passed to the page component as props

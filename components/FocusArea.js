@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styled from "styled-components"
+// import Link from 'next/link'
 
 import {
   Text,
@@ -13,14 +14,14 @@ const StyledFocusArea = styled.div`
   padding: ${({ theme }) => theme.util.buffer * 8}px;
   transition: ${({ theme }) => theme.util.transition};
   &:hover {
-    cursor: pointer;
-    transform: scale(1.04);
+    cursor: ${(props) => props.url ? 'pointer' : 'auto'};
+    transform: ${(props) => props.url ? `scale(1.04)` : 'none'};
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.opacity.light4};
   }
   &:active {
-    cursor: pointer;
-    transform: scale(1.04);
+    cursor: ${(props) => props.url ? 'pointer' : 'auto'};
+    transform: ${(props) => props.url ? `scale(1.04)` : 'none'};
     transition: ${({ theme }) => theme.util.transition};
     background: ${({ theme }) => theme.color.opacity.light8};
   }
@@ -33,7 +34,7 @@ const StyledFocusArea = styled.div`
     }
     &:active {
       cursor: pointer;
-      transform: scale(1.04);
+      transition: none;
       transition: ${({ theme }) => theme.util.transition};
       background: ${({ theme }) => theme.color.opacity.light8};
     }
@@ -50,7 +51,7 @@ const StyledIconArea = styled.div`
   };
   border-radius: ${({ theme }) => theme.util.radiusLarge}px;
   transition: ${({ theme }) => theme.util.transition};
-  ${(props) => props.isHovered &&`
+  ${(props) => (props.isHovered && props.url) &&`
     transform: scale(1.4) rotate(-12deg);
     transition: ${({ theme }) => theme.util.transition};
   `}
@@ -67,47 +68,59 @@ const StyledTextArea = styled(Grid)`
   }
 `;
 
-const FocusArea = ({ title, description, type }) => {
+const ConditionalLink = ({ children, url }) => {
+  return (
+    url ?
+      <a href={url} target="_blank">{children}</a>
+    :
+      <>{children}</>
+  )
+}
+
+const FocusArea = ({ title, description, type, url }) => {
 
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <StyledFocusArea
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <Grid container spacing={6}>
-        <Grid item>
-          <Grid container alignItems="center" spacing={6}>
-            <Grid item>
-              <StyledIconArea
-                isHovered={isHovered}
-              >
-                <Icon
-                  type={
-                    type === "Incubation" ? "rocket"
-                      : type === "Impact" ? "megaphone"
-                        : type === "Systems" ? "layer"
-                          : null
-                  }
-                />
-              </StyledIconArea>
+    <ConditionalLink url={url}>
+      <StyledFocusArea
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        url={url}
+      >
+        <Grid container spacing={6}>
+          <Grid item xs={12}>
+            <Grid container alignItems="center" justifyContent="space-between" spacing={6}>
+              <Grid item>
+                <StyledIconArea
+                  isHovered={isHovered}
+                  url={url}
+                >
+                  <Icon
+                    type={
+                      type === "Incubation" ? "rocket"
+                        : type === "Impact" ? "megaphone"
+                          : type === "Systems" ? "layer"
+                            : null
+                    }
+                  />
+                </StyledIconArea>
+              </Grid>
             </Grid>
           </Grid>
+          <StyledTextArea item>
+            <Grid container spacing={4}>
+              <Grid item xs={12}>
+                <Text title bold>{title}</Text>
+              </Grid>
+              <Grid item xs={12}>
+                <Text body small lightened>{description}</Text>
+              </Grid>
+            </Grid>
+          </StyledTextArea>
         </Grid>
-        <StyledTextArea item>
-          <Grid container spacing={4}>
-            <Grid item xs={12}>
-              <Text title bold>{title}</Text>
-            </Grid>
-            <Grid item xs={12}>
-              <Text body small lightened>{description}</Text>
-            </Grid>
-          </Grid>
-        </StyledTextArea>
-      </Grid>
-    </StyledFocusArea>
-
+      </StyledFocusArea>
+    </ConditionalLink>
   )
 }
 
