@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tend Build</title>
+        <title>Tend</title>
         <meta name="title" content="Tend" />
         <meta property="og:site_name" content="Tend" key="og_tend_site_name" />
         <meta name="description" content="Tend" />
