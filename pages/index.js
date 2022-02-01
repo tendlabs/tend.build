@@ -15,7 +15,7 @@ export default function Home({ focusAreas }) {
   return (
     <>
       <Head>
-        <title>Tend</title>
+        <title>Tend | Design, Engineering, Product</title>
         <meta name="title" content="Tend" />
         <meta property="og:site_name" content="Tend" key="og_tend_site_name" />
         <meta name="description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." />
