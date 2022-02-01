@@ -2,11 +2,22 @@
 $.verbose = false
 
 const step = async(msg, fn) => {
-  process.stdout.write(chalk.blue(`** ${msg} ...`))
-  const p = await fn()
-  // const spinner = chalkAnimation.radar('...')
-  // spinner.stop()
-  console.log(chalk.green(' done!'))
+  let p
+  if($.verbose) {
+    console.log(chalk.blue(`** ${msg} ...\n`))
+    process.stdout.write('  ')
+    p = await fn()
+    // const spinner = chalkAnimation.radar('...')
+    // spinner.stop()
+    console.log('\n')
+
+  } else {
+    process.stdout.write(chalk.blue(`** ${msg} ...`))
+    p = await fn()
+    // const spinner = chalkAnimation.radar('...')
+    // spinner.stop()
+    console.log(chalk.green(' done!'))
+  }
   return p
 }
 
@@ -21,9 +32,11 @@ if(output.exitCode !== 1) {
   console.log('  - No branch found, good to go!')
 }
 
+await step('Clearing out local copies of site', () => $`rm -rf out ; rm -rf docs`)
+await step('Creating output folders', () => $`mkdir out ; mkdir docs`)
 await step('Creating deploy branch named `gh-pages`', () => $`git checkout -b gh-pages`)
 await step('Adding jekyll ignore file', () => $`touch out/.nojekyll`)
-await step('Copying `out` to `docs`', () => $`cp -R out docs`)
+await step('Copying `out` to `docs`', () => $`cp -R out/* docs/`)
 await step('git add --all', () => $`git add --all ./docs -f`)
 await step('Committing build output', () => $`git commit -m ${'Deploy Next.js to gh-pages'}`)
 await step('Force pushing deploy branch', () => $`git push origin gh-pages -f`)
