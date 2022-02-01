@@ -10,7 +10,7 @@
     "deploy:serve": "./node_modules/.bin/serve -l 3333 ./out",
     "deploy:test": "npm run deploy:build; npm run deploy:serve & open http://localhost:3333",
     "deploy:deleteremote": "npm run deploy:build && git checkout main && echo 'deleting if gh-pages exists locally.. This might fail and thats ok.' && git branch -D gh-pages; echo '\n\nLet us deploy.' && git checkout -b gh-pages && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git push origin :gh-pages && git subtree push --prefix out origin gh-pages && git checkout main && git branch -D gh-pages",
-    "deploy": "npm run deploy:build && git checkout main && echo 'deleting if gh-pages exists locally.. This might fail and thats ok.' && git branch -D gh-pages; echo '\n\nLet us deploy.' && git checkout -b gh-pages && touch out/.nojekyll && git add out/ -f && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages && git checkout main && git branch -D gh-pages"
+    "deploy": "./node_modules/.bin/zx deploy.mjs"
   },
   "dependencies": {
     "framer-motion": "^6.0.0",
