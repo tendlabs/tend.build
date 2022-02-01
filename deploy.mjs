@@ -23,7 +23,8 @@ if(output.exitCode !== 1) {
 
 await step('Creating deploy branch named `gh-pages`', () => $`git checkout -b gh-pages`)
 await step('Adding jekyll ignore file', () => $`touch out/.nojekyll`)
-await step('git add --all', () => $`git add --all ./out -f`)
+await step('Copying `out` to `docs`', () => $`cp -R out docs`)
+await step('git add --all', () => $`git add --all ./docs -f`)
 await step('Committing build output', () => $`git commit -m ${'Deploy Next.js to gh-pages'}`)
 await step('Force pushing deploy branch', () => $`git push origin gh-pages -f`)
 await step('Switching back to main', () => $`git checkout main`)
