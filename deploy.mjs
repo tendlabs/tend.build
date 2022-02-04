@@ -1,5 +1,5 @@
 #!/usr/bin/env zx
-$.verbose = false
+// $.verbose = false
 
 const step = async(msg, fn) => {
   let p

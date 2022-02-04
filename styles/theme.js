@@ -18,6 +18,9 @@ export const theme = {
     lg: 1440
   },
   color: {
+    neutral: {
+      white: '#FFFFFF'
+    },
     text: {
       dark: '#11111A',
       light: '#FAFAFA',
@@ -47,22 +50,32 @@ export const theme = {
     },
     size: {
       body: {
-        small: 18,
-        regular: 24
+        mini: 10,
+        small: 12,
+        regular: 14,
+        large: 18
       },
       title: {
+        small: 20,
         regular: 24,
-        headline: 60
+        large: 36,
+        headline: 48,
+        super: 64
       }
     },
     lineHeight: {
       body: {
-        small: 22,
-        regular: 28
+        mini: 12,
+        small: 16,
+        regular: 20,
+        large: 22
       },
       title: {
-        regular: 28,
-        headline: 60
+        small: 24,
+        regular: 32,
+        large: 48,
+        headline: 60,
+        super: 64
       },
     }
   }
@@ -73,7 +86,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body, html {
     margin: 0 !important;
-    background: ${({ theme }) => theme.color.text.dark};
   }
 
   html {

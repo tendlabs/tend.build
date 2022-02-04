@@ -1,18 +1,8 @@
 import styled from "styled-components"
-import Div100vh from 'react-div-100vh'
-import { useRef, useState } from 'react'
-import React from 'react'
-import { useElementScroll } from 'framer-motion'
+import { AnimatePresence, motion} from 'framer-motion'
+import { useRouter } from "next/router"
 
-import MaxWidth from './MaxWidth'
-import CTA from '../CTA'
-
-const StyledPageContainer = styled(Div100vh)`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
+const StyledPageContainer = styled(motion.div)`
   padding: ${({ theme }) => theme.util.buffer * 24}px 0;
   z-index: 100;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
@@ -22,22 +12,21 @@ const StyledPageContainer = styled(Div100vh)`
   }
 `;
 
-const PageContainer = ({ children }) => {
-  const ref = useRef(null)
-  const [progress, setProgress] = useState(0)
-  const { scrollYProgress } = useElementScroll(ref)
-  scrollYProgress.onChange(setProgress)
+const PageContainer = ({ children, hasCta }) => {
+  const path = useRouter().pathname
 
   return (
-    <StyledPageContainer ref={ref}>
-
-      <MaxWidth>
-        <CTA emphasis={progress < .1 ? true : false}/>
-      </MaxWidth>
-
-      {children}
-
-    </StyledPageContainer>
+    <AnimatePresence exitBeforeEnter>
+      <StyledPageContainer
+        key={path}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+        transition={{duration: 1}}
+      >
+        {children}
+      </StyledPageContainer>
+    </AnimatePresence>
   )
 }
 
