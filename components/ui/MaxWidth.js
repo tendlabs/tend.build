@@ -6,7 +6,7 @@ const StyledMaxwidth = styled.div`
   margin: 0 auto;
 `;
 
-const MaxWidth = ({ children }) => {
+const MaxWidth = ({ children}) => {
   return (
     <StyledMaxwidth>
       {children}

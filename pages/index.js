@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle, theme } from '../styles/theme'
 
 import {
   PageContainer,
@@ -15,6 +17,8 @@ export default function Home({ focusAreas }) {
 
   return (
     <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Head>
         <title>Tend | Design, Engineering, Product</title>
         <meta name="title" content="Tend" />
@@ -28,9 +32,9 @@ export default function Home({ focusAreas }) {
 
       <PageContainer>
 
-
         <MaxWidth>
-        <CTA />
+
+          <CTA />
 
           <Grid container spacing={24}>
 
@@ -78,7 +82,7 @@ export default function Home({ focusAreas }) {
 
         </MaxWidth>
       </PageContainer>
-
+    </ThemeProvider>
     </>
   )
 }

@@ -18,9 +18,6 @@ export const theme = {
     lg: 1440
   },
   color: {
-    neutral: {
-      white: '#FFFFFF'
-    },
     text: {
       dark: '#11111A',
       light: '#FAFAFA',
@@ -32,7 +29,7 @@ export const theme = {
       light8: `rgba(255,255,255,.08)`,
       light24: `rgba(255,255,255,.24)`,
       light48: `rgba(255,255,255,.48)`,
-    }
+    },
   },
   text: {
     family: {

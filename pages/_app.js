@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, theme } from '../styles/theme'
+import { designTheme } from '../styles/tend-design-theme'
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion } from "framer-motion"
 
@@ -12,10 +13,13 @@ function App({ Component, pageProps }) {
   const router = useRouter()
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={router.pathname === '/design' ? designTheme : theme}>
 
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
       <GlobalStyle/>

@@ -6,12 +6,23 @@ import {
   Text,
   Grid
 } from '../components/ui'
+import Header from '../components/TendDesign/Header'
+import Hero from '../components/TendDesign/Hero'
+import SellingPoints from '../components/TendDesign/SellingPoints'
 
 const Design = ({}) => {
   return (
     <>
-      <PageContainer>
-        hi
+      <Head>
+        <title>Tend Design</title>
+      </Head>
+
+      <PageContainer noPadding>
+
+        <Header />
+        <Hero />
+        <SellingPoints />
+
       </PageContainer>
     </>
   )
