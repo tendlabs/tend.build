@@ -22,7 +22,7 @@ const Design = ({}) => {
   const [ scrollYState, setScrollY ] = useState(0)
   const { scrollY } = useViewportScroll()
   scrollY.onChange(setScrollY)
-  const y1 = useTransform(scrollY, [0, 2400], [48, -48]);
+  const y1 = useTransform(scrollY, [0, 3200], [120, -120]);
   const y2 = useTransform(scrollY, [0, 1000], [50, -50]);
 
   console.log(y1)
