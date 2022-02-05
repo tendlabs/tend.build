@@ -66,7 +66,7 @@ const Point = [
   },
   {
     title: 'Your brand and UI, one and the same.',
-    subtitle: 'Inconsistencies result from a brand having to be interpreted over and over by those implementing it. Get brand into your UI once and move forward.',
+    subtitle: 'Inconsistencies result from a brand having to be interpreted over and over. Get brand into your UI once and move forward.',
     img: '/design/brand-ui-image.svg'
   },
 ]

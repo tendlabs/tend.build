@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 const StyledPageContainer = styled(motion.div)`
   padding: ${(props) => props.noPadding ? 0 : props.theme.util.buffer * 24}px 0;
   z-index: 100;
+  overflow-x: hidden;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     padding-top: ${({ theme }) => theme.util.buffer * 6}px;
     padding-bottom: ${({ theme }) => theme.util.buffer * 48}px;

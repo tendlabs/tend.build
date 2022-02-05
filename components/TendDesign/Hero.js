@@ -9,7 +9,7 @@ import {
 import HeroImage from './AnimatedImages/HeroImage'
 
 const StyledHero = styled(Grid)`
-  padding: ${({ theme }) => theme.util.buffer * 50}px 0;
+  padding: ${({ theme }) => theme.util.buffer * 30}px 0;
 `;
 const StyledHeroImage = styled(HeroImage)`
   transform-origin: left;
