@@ -11,7 +11,7 @@ import {
 } from './ui'
 
 const StyledQuestion = styled(motion.div)`
-  padding: ${({ theme }) => theme.util.buffer * 6}px 0;
+  padding: ${({ theme }) => theme.util.buffer * 8}px 0;
   border-bottom: 1px solid ${({ theme }) => theme.color.neutral.lightened};
   width: 100%;
   &:hover {
@@ -22,9 +22,6 @@ const StyledAnswer = styled.div`
   padding: ${({ theme }) => theme.util.buffer * 4}px 0 0 0;
   height: 100%;
   overflow: auto;
-`;
-const AnswerContent = styled(motion.div)`
-  opacity: 0;
 `;
 const StyledIconWrapper = styled.div`
   transform: ${(props) => props.rotate ? `rotate(45deg)` : `rotate(0deg)`};
@@ -56,7 +53,7 @@ const Question = ({ question, answer }) => {
       {isOpen ?
 
         <StyledAnswer>
-          <AnswerContent
+          <motion.div
             layout
             initial={{opacity: 0}}
             animate={{opacity: 1}}
@@ -68,7 +65,7 @@ const Question = ({ question, answer }) => {
                 <Text body regular>{answer}</Text>
               </Grid>
             </Grid>
-          </AnswerContent>
+          </motion.div>
         </StyledAnswer>
       : null}
 
