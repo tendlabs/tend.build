@@ -44,7 +44,8 @@ export const designTheme = {
       dark48: `rgba(000,000,000,.48)`,
     },
     primary: {
-      main: '#388AEB'
+      main: '#388AEB',
+      lightened: '#EFF6FD'
     }
   },
   text: {

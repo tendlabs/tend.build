@@ -5,9 +5,10 @@ const StyledText = styled.span`
   font-family: ${({ theme }) => theme.text.family.regular};
 
   color: ${(props) => props.lightened ? props.theme.color.opacity.dark48
-    : props.primary ? props.theme.color.primary.main
-      : props.light ? props.theme.color.neutral.white
-        : props.theme.color.text.dark
+    : props.darkened ? props.theme.color.opacity.light48
+      : props.primary ? props.theme.color.primary.main
+        : props.light ? props.theme.color.neutral.white
+          : props.theme.color.text.dark
   };
 
   font-weight: ${(props) => (props.title && props.bold && props.super) ? props.theme.text.weight.title.super

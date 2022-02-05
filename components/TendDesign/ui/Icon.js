@@ -6,6 +6,19 @@ import {
   Layer,
   Copy
 } from '@styled-icons/boxicons-solid'
+import {
+  Chart,
+  Buoy,
+  Extension,
+  Magnet,
+  Glasses,
+  Ruler,
+  Brush,
+  Intersect,
+  Selection,
+  Search,
+  Star
+} from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
   width: ${(props) => props.size ? props.size : props.theme.util.buffer * 6}px;
@@ -19,7 +32,8 @@ const StyledIcon = styled.span`
       : `color: ${props.theme.color.text.light};`
     };
     ${(props) => props.dark ? `color: ${props.theme.color.text.dark};`
-      : `color: ${props.theme.color.text.light};`
+      : props.primary ? `color: ${props.theme.color.primary.main};`
+        : `color: ${props.theme.color.text.light};`
     };
     position: relative;
     top: -1px;
@@ -43,6 +57,28 @@ const Icon =({
     source = <Layer />
   } else if (type === 'copy') {
     source = <Copy />
+  } else if (type === 'chart') {
+    source = <Chart />
+  } else if (type === 'buoy') {
+    source = <Buoy />
+  } else if (type === 'puzzle') {
+    source = <Extension />
+  } else if (type === 'magnet') {
+    source = <Magnet />
+  } else if (type === 'glasses') {
+    source = <Glasses />
+  } else if (type === 'ruler') {
+    source = <Ruler />
+  } else if (type === 'brush') {
+    source = <Brush />
+  } else if (type === 'intersect') {
+    source = <Intersect />
+  } else if (type === 'selection') {
+    source = <Selection />
+  } else if (type === 'search') {
+    source = <Search />
+  } else if (type === 'star') {
+    source = <Star />
   }
 
   return (
