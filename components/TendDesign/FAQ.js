@@ -23,9 +23,6 @@ const StyledAnswer = styled.div`
   height: 100%;
   overflow: auto;
 `;
-const AnswerContent = styled(motion.div)`
-  opacity: 0;
-`;
 const StyledIconWrapper = styled.div`
   transform: ${(props) => props.rotate ? `rotate(45deg)` : `rotate(0deg)`};
   transition: ${({ theme }) => theme.util.transition};
@@ -56,7 +53,7 @@ const Question = ({ question, answer }) => {
       {isOpen ?
 
         <StyledAnswer>
-          <AnswerContent
+          <motion.div
             layout
             initial={{opacity: 0}}
             animate={{opacity: 1}}
@@ -68,7 +65,7 @@ const Question = ({ question, answer }) => {
                 <Text body regular>{answer}</Text>
               </Grid>
             </Grid>
-          </AnswerContent>
+          </motion.div>
         </StyledAnswer>
       : null}
 
