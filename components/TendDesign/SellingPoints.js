@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 import {
   Grid,
@@ -6,6 +7,7 @@ import {
   MaxWidth,
   Container
 } from './ui'
+import { useEffect } from 'react';
 
 const ImageWrapper = styled.div`
   height: 100%;
@@ -17,7 +19,8 @@ const StyledImage = styled.img`
   transform: translateY(-50%);
 `;
 
-const SellingPoints = ({}) => {
+const SellingPoints = ({ y1, y2 }) => {
+
   return (
     <MaxWidth>
       <Grid container spacing={12}>
@@ -37,9 +40,11 @@ const SellingPoints = ({}) => {
                   </Grid>
                 </Grid>
                 <Grid item xs={12} sm={6} style={{height: '100%'}}>
-                  <ImageWrapper>
-                    <StyledImage src={p.img} />
-                  </ImageWrapper>
+                  <motion.div style={{ y: y1 }}>
+                    <ImageWrapper>
+                      <StyledImage src={p.img} />
+                    </ImageWrapper>
+                  </motion.div>
                 </Grid>
               </Grid>
             </Container>

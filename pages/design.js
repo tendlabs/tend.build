@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Head from 'next/head'
-import { LayoutGroup, motion } from 'framer-motion'
+import { LayoutGroup, useViewportScroll, useTransform, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 import {
   PageContainer,
@@ -17,6 +19,20 @@ import FAQ from '../components/TendDesign/FAQ'
 import Footer from '../components/TendDesign/Footer'
 
 const Design = ({}) => {
+  const [ scrollYState, setScrollY ] = useState(0)
+  const { scrollY } = useViewportScroll()
+  scrollY.onChange(setScrollY)
+  const y1 = useTransform(scrollY, [0, 2400], [48, -48]);
+  const y2 = useTransform(scrollY, [0, 1000], [50, -50]);
+
+  console.log(y1)
+
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.5,
+    triggerOnce: false
+  });
+
   return (
     <>
       <Head>
@@ -29,7 +45,10 @@ const Design = ({}) => {
 
         <Hero />
 
-        <SellingPoints />
+        <SellingPoints
+          y1={y1}
+          y2={y2}
+        />
 
         <Statement
           title="We build scalable value for companies large and small."

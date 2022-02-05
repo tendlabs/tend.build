@@ -12,14 +12,15 @@ const StyledHero = styled(Grid)`
   padding: ${({ theme }) => theme.util.buffer * 30}px 0;
 `;
 const StyledHeroImage = styled(HeroImage)`
-  transform-origin: left;
-  transform: scale(1.25);
+  transform-origin: bottom left;
+  transform: scale(1.15);
 `;
 const Emphasis = styled.span`
   color: ${({ theme }) => theme.color.primary.main};
 `;
 
 const Hero = ({}) => {
+
   return (
     <MaxWidth>
       <StyledHero container spacing={20}>
