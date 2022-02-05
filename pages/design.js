@@ -23,7 +23,7 @@ const Design = ({}) => {
   const { scrollY } = useViewportScroll()
   scrollY.onChange(setScrollY)
   const y1 = useTransform(scrollY, [0, 2000], [80, -24]);
-  const y2 = useTransform(scrollY, [0, 1000], [50, -50]);
+  const y2 = useTransform(scrollY, [0, 1024], [0, -120]);
 
   console.log(y1)
 
@@ -43,12 +43,9 @@ const Design = ({}) => {
 
         <Header />
 
-        <Hero />
+        <Hero y2={y2} />
 
-        <SellingPoints
-          y1={y1}
-          y2={y2}
-        />
+        <SellingPoints y1={y1} />
 
         <Statement
           title="We build scalable value for companies large and small."

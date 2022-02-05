@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 import {
   MaxWidth,
@@ -19,7 +20,7 @@ const Emphasis = styled.span`
   color: ${({ theme }) => theme.color.primary.main};
 `;
 
-const Hero = ({}) => {
+const Hero = ({ y2 }) => {
 
   return (
     <MaxWidth>
@@ -42,7 +43,9 @@ const Hero = ({}) => {
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <StyledHeroImage />
+          <motion.div style={{ y: y2 }}>
+            <StyledHeroImage />
+          </motion.div>
         </Grid>
 
       </StyledHero>
