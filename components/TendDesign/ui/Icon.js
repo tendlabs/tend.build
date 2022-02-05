@@ -17,7 +17,8 @@ import {
   Intersect,
   Selection,
   Search,
-  Star
+  Star,
+  Plus
 } from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
@@ -79,6 +80,8 @@ const Icon =({
     source = <Search />
   } else if (type === 'star') {
     source = <Star />
+  } else if (type === 'plus') {
+    source = <Plus />
   }
 
   return (

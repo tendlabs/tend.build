@@ -12,6 +12,7 @@ import SellingPoints from '../components/TendDesign/SellingPoints'
 import Statement from '../components/TendDesign/Statement'
 import PortfolioCards from '../components/TendDesign/PortfolioCards'
 import NarrativePoint from '../components/TendDesign/NarrativePoint'
+import FAQ from '../components/TendDesign/FAQ'
 import Footer from '../components/TendDesign/Footer'
 
 const Design = ({}) => {
@@ -56,6 +57,10 @@ const Design = ({}) => {
           title="We bring clarity to an inherently messy process."
           subtitle="Building and shipping products is a game best played fast. We get it, and wouldn’t change it for the world. We bring an external set of eyes and a plan of action to the table."
           points={Clarity}
+        />
+
+        <FAQ
+          questions={commonQuestions}
         />
 
         <Footer/>
@@ -136,5 +141,32 @@ const Clarity = [
     step: '3',
     title: 'Build and ship',
     subtitle: 'Finally, we work with your team to discover the best way to implement code and ship a UI system.',
+  },
+]
+
+const commonQuestions = [
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  },
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  },
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  },
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  },
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  },
+  {
+    question: 'Why is it better to hire you, than build my internal team?',
+    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
 ]
