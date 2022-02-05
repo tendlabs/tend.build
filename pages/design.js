@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { LayoutGroup, motion } from 'framer-motion'
 
 import {
   PageContainer,
@@ -59,11 +60,19 @@ const Design = ({}) => {
           points={Clarity}
         />
 
-        <FAQ
-          questions={commonQuestions}
-        />
+        <LayoutGroup>
+          <motion.div layout>
+            <FAQ
+              questions={commonQuestions}
+            />
+          </motion.div>
 
-        <Footer/>
+          <motion.div layout layoutId="faq" transition={{duration: .15}}>
+            <Footer/>
+          </motion.div>
+        </LayoutGroup>
+
+
 
       </PageContainer>
     </>
