@@ -42,7 +42,7 @@ const Question = ({ question, answer }) => {
           <Grid item xs={11}>
             <Text body large bold>{question}</Text>
           </Grid>
-          <Grid item xs={1}>
+          <Grid item xs={1} alignItems="flex-end">
             <StyledIconWrapper rotate={isOpen}>
               <Icon type="plus" dark/>
             </StyledIconWrapper>

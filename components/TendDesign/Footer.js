@@ -26,7 +26,7 @@ const Footer = ({}) => {
       <MaxWidth>
         <Grid container>
           <Grid item>
-            <Link href="/">
+            <Link href="/" passHref>
               <StyledTag>
                 <Text body regular lightened>© 2022 Tend Labs LLC</Text>
               </StyledTag>
