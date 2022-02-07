@@ -10,6 +10,9 @@ import {
 
 const StyledHeader = styled(Grid)`
   padding: ${({ theme }) => theme.util.buffer * 6}px 0;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    padding: ${({ theme }) => theme.util.buffer * 2}px 0;
+  }
 `;
 const StyledLogo = styled.div`
   width: ${({ theme }) => theme.util.buffer * 9}px;

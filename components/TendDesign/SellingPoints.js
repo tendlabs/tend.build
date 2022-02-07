@@ -12,11 +12,22 @@ import { useEffect } from 'react';
 const ImageWrapper = styled.div`
   height: 100%;
   position: relative;
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const StyledImage = styled.img`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
+    position: relative;
+    top: 0;
+    transform: none;
+    width: 130%;
+  }
 `;
 
 const SellingPoints = ({ y1, y2 }) => {

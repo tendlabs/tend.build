@@ -39,10 +39,10 @@ const Question = ({ question, answer }) => {
     >
       <motion.div layout>
         <Grid container justifyContent="space-between">
-          <Grid item>
+          <Grid item xs={11}>
             <Text body large bold>{question}</Text>
           </Grid>
-          <Grid item>
+          <Grid item xs={1}>
             <StyledIconWrapper rotate={isOpen}>
               <Icon type="plus" dark/>
             </StyledIconWrapper>

@@ -24,8 +24,9 @@ const Design = ({}) => {
   scrollY.onChange(setScrollY)
   const y1 = useTransform(scrollY, [0, 2000], [80, -24]);
   const y2 = useTransform(scrollY, [0, 1024], [0, -120]);
+  const y3 = useTransform(scrollY, [0, 2000], [-80, 0]);
 
-  console.log(y1)
+  // console.log(y1)
 
   const [ref, inView, entry] = useInView({
     /* Optional options */
@@ -52,7 +53,9 @@ const Design = ({}) => {
           subtitle="Our UI systems aren’t just a collection of arbitrary components, like you might get in a popular framework. Instead we build business logic in, so you can grow faster."
         />
 
-        <PortfolioCards />
+        <PortfolioCards
+          y={y3}
+        />
 
         <NarrativePoint
           offset
