@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle, theme } from '../styles/theme'
 
 import {
   PageContainer,
@@ -7,6 +9,7 @@ import {
   Grid
 } from '../components/ui'
 import FocusArea from '../components/FocusArea'
+import CTA from '../components/CTA'
 
 export default function Home({ focusAreas }) {
 
@@ -14,6 +17,8 @@ export default function Home({ focusAreas }) {
 
   return (
     <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Head>
         <title>Tend | Design, Engineering, Product</title>
         <meta name="title" content="Tend" />
@@ -26,14 +31,17 @@ export default function Home({ focusAreas }) {
       </Head>
 
       <PageContainer>
+
         <MaxWidth>
+
+          <CTA />
 
           <Grid container spacing={24}>
 
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={6}>
-                  <Text title headline bold>Tend</Text>
+                  <Text title super bold>Tend</Text>
                 </Grid>
               </Grid>
             </Grid>
@@ -41,7 +49,7 @@ export default function Home({ focusAreas }) {
             <Grid item xs={12}>
               <Grid container>
                 <Grid item xs={12} sm={12}>
-                  <Text body>We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive.</Text>
+                  <Text title regular>We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive.</Text>
                 </Grid>
               </Grid>
             </Grid>
@@ -65,7 +73,7 @@ export default function Home({ focusAreas }) {
             <Grid item xs={12}>
               <Grid container spacing={12}>
                 <Grid item>
-                  <Text body small lightened>&copy; 2022 Tend Labs LLC</Text>
+                  <Text body regular lightened>&copy; 2022 Tend Labs LLC</Text>
                 </Grid>
               </Grid>
             </Grid>
@@ -74,7 +82,7 @@ export default function Home({ focusAreas }) {
 
         </MaxWidth>
       </PageContainer>
-
+    </ThemeProvider>
     </>
   )
 }

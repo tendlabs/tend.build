@@ -111,10 +111,10 @@ const FocusArea = ({ title, description, type, url }) => {
           <StyledTextArea item>
             <Grid container spacing={4}>
               <Grid item xs={12}>
-                <Text title bold>{title}</Text>
+                <Text title regular bold>{title}</Text>
               </Grid>
               <Grid item xs={12}>
-                <Text body small lightened>{description}</Text>
+                <Text body large lightened>{description}</Text>
               </Grid>
             </Grid>
           </StyledTextArea>

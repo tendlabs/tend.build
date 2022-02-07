@@ -1,21 +1,15 @@
-import { AnimatePresence, motion } from "framer-motion"
-import { useRouter } from "next/router"
+import styled from 'styled-components'
 
-const Layout = ({ children }) => {
-  const path = useRouter().pathname
+const StyledLayout = styled.div`
+  background: ${(props) => props.lightBg ? props.theme.color.neutral.white : props.theme.color.text.dark};
+`;
+
+const Layout = ({ children, lightBg }) => {
 
   return (
-    <AnimatePresence exitBeforeEnter>
-      <motion.div
-        key={path}
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        exit={{opacity: 0}}
-        transition={{duration: .25}}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <StyledLayout lightBg={lightBg}>
+      {children}
+    </StyledLayout>
   )
 }
 

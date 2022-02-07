@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import { motion, useViewportScroll } from 'framer-motion'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import { useMediaQuery } from 'react-responsive'
 
@@ -55,9 +55,12 @@ const StyledTextWrapper = styled(motion.span)`
   justify-content: center;
 `;
 
-const CTA = ({ emphasis }) => {
+const CTA = ({}) => {
   const [ctaHovered, setCtaHovered] = useState(false)
   const [emailCopied, setEmailCopied] = useState(false)
+  const [progress, setProgress] = useState(0)
+  const { scrollY } = useViewportScroll()
+  scrollY.onChange(setProgress)
 
   useEffect(() => {
     const timer = setTimeout(() => [
@@ -65,6 +68,7 @@ const CTA = ({ emphasis }) => {
     ], 1000)
     return () => clearTimeout(timer)
   }, [emailCopied])
+
 
   const isXs = useMediaQuery(
     { maxDeviceWidth: theme.breakpoint.xs },
@@ -99,7 +103,7 @@ const CTA = ({ emphasis }) => {
       <StyledCTA item alignItems="flex-end">
         <CopyToClipboard text="with@tend.build" onCopy={() => setEmailCopied(true)}>
           <Button
-            emphasis={emphasis}
+            emphasis={progress < .1 ? true : false}
             onMouseEnter={isXs ? null : () => setCtaHovered(true)}
             onMouseLeave={isXs ? null : () => setCtaHovered(false)}
           >
@@ -111,7 +115,7 @@ const CTA = ({ emphasis }) => {
                     : `centered`
                 }
               >
-                <Text body>with@tend.build</Text>
+                <Text title regular>with@tend.build</Text>
               </StyledTextWrapper>
 
               {isXs ?
@@ -124,7 +128,7 @@ const CTA = ({ emphasis }) => {
                       : `toTop`
                   }
                 >
-                  <Text body>Copy email</Text>
+                  <Text title regular>Copy email</Text>
                 </StyledTextWrapper>
               }
 
@@ -132,7 +136,7 @@ const CTA = ({ emphasis }) => {
                 variants={variants}
                 animate={emailCopied ? `centered` : `toTop`}
               >
-                <Text body>Email copied!</Text>
+                <Text title regular>Email copied!</Text>
               </StyledTextWrapper>
             </StyledTextContainer>
           </Button>

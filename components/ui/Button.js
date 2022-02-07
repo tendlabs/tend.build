@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const StyledButton = styled.div`
-  padding: ${({ theme }) => theme.util.buffer * 4}px ${({ theme }) => theme.util.buffer * 6}px;
+  padding: ${({ theme }) => theme.util.buffer * 6}px ${({ theme }) => theme.util.buffer * 6}px;
   border-radius: ${({ theme }) => theme.util.buffer * 12}px;
   background: ${(props) => props.emphasis ? props.theme.color.text.light : props.theme.color.opacity.light4};
   transition: ${({ theme }) => theme.util.transition};
