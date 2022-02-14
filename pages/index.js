@@ -91,13 +91,6 @@ export async function getStaticProps(context) {
     props: {
       focusAreas: [
         {
-          title: 'Tend Labs',
-          description: 'We partner with founders to ship critical-path product. We work together to materialize vision, plan roadmaps, write code to scale up and move fast. Zero to one.',
-          type: 'Incubation',
-          icon: 'rocket',
-          url: null
-        },
-        {
           title: 'Little Universe',
           description: 'We build products for amazing impact-focused organizations and businesses. We employ trust-driven agile practices to build and scale beautiful, accessible technology that drives momentum for causes that matter.',
           type: 'Impact',
@@ -105,10 +98,17 @@ export async function getStaticProps(context) {
           url: 'https://www.littleuniverse.com/'
         },
         {
-          title: 'Radius',
+          title: 'Tend Design',
           description: 'We create curated design systems conceptualized, built, and shipped for our client’s products. We believe that when you need to move fast, constraint is empowering. We ship the polished building blocks that unify a team and empower growth.',
           type: 'Systems',
           icon: 'layer',
+          url: '/design'
+        },
+        {
+          title: 'Tend Labs',
+          description: 'We partner with founders to ship critical-path product. We work together to materialize vision, plan roadmaps, write code to scale up and move fast. Zero to one.',
+          type: 'Incubation',
+          icon: 'rocket',
           url: null
         },
       ]

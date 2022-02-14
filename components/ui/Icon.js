@@ -6,6 +6,9 @@ import {
   Layer,
   Copy
 } from '@styled-icons/boxicons-solid'
+import {
+  RightArrowAlt
+} from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
   width: ${(props) => props.size ? props.size : props.theme.util.buffer * 6}px;
@@ -43,6 +46,8 @@ const Icon =({
     source = <Layer />
   } else if (type === 'copy') {
     source = <Copy />
+  } else if (type === 'right-arrow') {
+    source = <RightArrowAlt />
   }
 
   return (

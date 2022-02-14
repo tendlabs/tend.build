@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 import {
   Grid,
@@ -38,7 +39,11 @@ const Header = ({}) => {
             </Grid>
             <Grid item>
               <Text title small bold primary>Tend Design</Text>
-              <Text body mini bold primary>By Tend Labs</Text>
+              <Link href="/">
+                <a>
+                  <Text body mini bold primary>By Tend Labs</Text>
+                </a>
+              </Link>
             </Grid>
           </Grid>
         </Grid>

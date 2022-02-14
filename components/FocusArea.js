@@ -106,6 +106,13 @@ const FocusArea = ({ title, description, type, url }) => {
                   />
                 </StyledIconArea>
               </Grid>
+              { url ?
+                <Grid item>
+                  <Icon
+                    type="right-arrow"
+                  />
+                </Grid>
+              : null}
             </Grid>
           </Grid>
           <StyledTextArea item>
