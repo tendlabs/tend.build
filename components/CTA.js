@@ -40,7 +40,7 @@ const StyledTextContainer = styled.div`
   height: ${({ theme }) => theme.text.size.body.regular}px;
   position: relative;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
-    height: ${({ theme }) => theme.text.size.body.small * 2}px;
+    height: ${({ theme }) => theme.text.size.body.small * 4}px;
     width: 100%;
   }
   `;

@@ -9,6 +9,7 @@ const StyledPageContainer = styled(motion.div)`
     padding-top: ${({ theme }) => theme.util.buffer * 6}px;
     padding-bottom: ${({ theme }) => theme.util.buffer * 48}px;
     -webkit-overflow-scrolling: touch !important;
+    overflow-x: hidden;
   }
 `;
 
