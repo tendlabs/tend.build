@@ -36,7 +36,7 @@ const StyledCTA = styled(Grid)`
   }
 `;
 const StyledTextContainer = styled.div`
-  width: ${({ theme }) => theme.util.buffer * 44}px;
+  width: ${({ theme }) => theme.util.buffer * 50}px;
   height: ${({ theme }) => theme.text.size.body.regular}px;
   position: relative;
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
@@ -101,7 +101,7 @@ const CTA = ({}) => {
   return (
     <Grid container>
       <StyledCTA item alignItems="flex-end">
-        <CopyToClipboard text="with@tend.build" onCopy={() => setEmailCopied(true)}>
+        <CopyToClipboard text="hello@tend.build" onCopy={() => setEmailCopied(true)}>
           <Button
             emphasis={progress < .1 ? true : false}
             onMouseEnter={isXs ? null : () => setCtaHovered(true)}
@@ -115,7 +115,7 @@ const CTA = ({}) => {
                     : `centered`
                 }
               >
-                <Text title regular>with@tend.build</Text>
+                <Text title regular>hello@tend.build</Text>
               </StyledTextWrapper>
 
               {isXs ?
