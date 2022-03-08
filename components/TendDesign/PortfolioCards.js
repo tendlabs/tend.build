@@ -40,7 +40,7 @@ const PortfolioCards = ({ y }) => {
   return (
     <StyledPortfolioCards noPadding>
       <MaxWidth>
-          <motion.div style={{ y: y }}>
+        {/* <motion.div style={{ y: y }}> */}
         <Grid container spacing={12}>
           {Cards.map((c, i) =>
             <StyledCardContainer item xs={12} sm={6} key={i} offset={i % 2}>
@@ -62,7 +62,7 @@ const PortfolioCards = ({ y }) => {
             </StyledCardContainer>
           )}
         </Grid>
-                </motion.div>
+        {/* </motion.div> */}
       </MaxWidth>
     </StyledPortfolioCards>
   )

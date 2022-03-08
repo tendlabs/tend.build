@@ -51,11 +51,11 @@ const SellingPoints = ({ y1, y2 }) => {
                   </Grid>
                 </Grid>
                 <Grid item xs={12} sm={6} style={{height: '100%'}}>
-                  <motion.div style={{ y: y1 }}>
+                  {/* <motion.div style={{ y: y1 }}> */}
                     <ImageWrapper>
                       <StyledImage src={p.img} />
                     </ImageWrapper>
-                  </motion.div>
+                  {/* </motion.div> */}
                 </Grid>
               </Grid>
             </Container>

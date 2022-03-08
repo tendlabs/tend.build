@@ -18,7 +18,8 @@ import {
   Selection,
   Search,
   Star,
-  Plus
+  Plus,
+  X
 } from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
@@ -82,6 +83,8 @@ const Icon =({
     source = <Star />
   } else if (type === 'plus') {
     source = <Plus />
+  } else if (type === 'close') {
+    source = <X />
   }
 
   return (

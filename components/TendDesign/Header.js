@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 
@@ -8,6 +9,7 @@ import {
   Icon,
   Button
 } from './ui'
+import ContactFormModal from './ContactFormModal';
 
 const StyledHeader = styled(Grid)`
   padding: ${({ theme }) => theme.util.buffer * 6}px 0;
@@ -26,38 +28,45 @@ const StyledLogo = styled.div`
 `;
 
 const Header = ({}) => {
+  const [ contactModalOpen, setContactModalOpen ] = useState(false)
   return (
-    <MaxWidth>
-      <StyledHeader container alignItems="center" justifyContent="space-between">
+    <>
+      <MaxWidth>
+        <StyledHeader container alignItems="center" justifyContent="space-between">
 
-        <Grid item>
-          <Grid container alignItems="center" spacing={3}>
-            <Grid item>
-              <StyledLogo>
-                <Icon type="layer" size={20}/>
-              </StyledLogo>
-            </Grid>
-            <Grid item>
-              <Text title small bold primary>Tend Design</Text>
-              <Link href="/">
-                <a>
-                  <Text body mini bold primary>By Tend Labs</Text>
-                </a>
-              </Link>
+          <Grid item>
+            <Grid container alignItems="center" spacing={3}>
+              <Grid item>
+                <StyledLogo>
+                  <Icon type="layer" size={20}/>
+                </StyledLogo>
+              </Grid>
+              <Grid item>
+                <Text title small bold primary>Tend Design</Text>
+                <Link href="/">
+                  <a>
+                    <Text body mini bold primary>By Tend Labs</Text>
+                  </a>
+                </Link>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <Grid item>
-          <Grid container>
-            <Button small lightened>
-              <Text body regular bold primary>Work with us</Text>
-            </Button>
+          <Grid item>
+            <Grid container>
+              <Button small lightened onClick={() => setContactModalOpen(true)}>
+                <Text body regular bold primary>Work with us</Text>
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
 
-      </StyledHeader>
-    </MaxWidth>
+        </StyledHeader>
+      </MaxWidth>
+      <ContactFormModal
+        isOpen={contactModalOpen}
+        toggle={() => setContactModalOpen(!contactModalOpen)}
+      />
+    </>
   )
 }
 

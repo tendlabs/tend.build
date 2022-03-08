@@ -4,6 +4,7 @@ import { GlobalStyle, theme } from '../styles/theme'
 import { designTheme } from '../styles/tend-design-theme'
 import { useRouter } from 'next/router'
 import { AnimatePresence, motion } from "framer-motion"
+import { ModalProvider } from 'styled-react-modal'
 
 import {
   Layout
@@ -14,19 +15,21 @@ function App({ Component, pageProps }) {
 
   return (
     <ThemeProvider theme={router.pathname === '/design' ? designTheme : theme}>
-
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
+      <ModalProvider>
 
-      <GlobalStyle/>
+        <GlobalStyle/>
 
-      <Layout lightBg={router.pathname === '/design'}>
-        <Component key={router.pathname} {...pageProps} />
-      </Layout>
+        <Layout lightBg={router.pathname === '/design'}>
+          <Component key={router.pathname} {...pageProps} />
+        </Layout>
+
+      </ModalProvider>
 
     </ThemeProvider>
   )
