@@ -15,15 +15,13 @@ const StyledFocusArea = styled.div`
   transition: ${({ theme }) => theme.util.transition};
   &:hover {
     cursor: ${(props) => props.url ? 'pointer' : 'auto'};
-    transform: ${(props) => props.url ? `scale(1.04)` : 'none'};
+    background: ${(props) => props.url ? props.theme.color.opacity.light8 : props.theme.color.opacity.light4};
     transition: ${({ theme }) => theme.util.transition};
-    background: ${({ theme }) => theme.color.opacity.light4};
   }
   &:active {
     cursor: ${(props) => props.url ? 'pointer' : 'auto'};
-    transform: ${(props) => props.url ? `scale(1.04)` : 'none'};
+    background: ${(props) => props.url ? props.theme.color.opacity.light8 : props.theme.color.opacity.light4};
     transition: ${({ theme }) => theme.util.transition};
-    background: ${({ theme }) => theme.color.opacity.light8};
   }
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {
     padding: ${({ theme }) => theme.util.buffer * 6}px;
@@ -52,7 +50,7 @@ const StyledIconArea = styled.div`
   border-radius: ${({ theme }) => theme.util.radiusLarge}px;
   transition: ${({ theme }) => theme.util.transition};
   ${(props) => (props.isHovered && props.url) &&`
-    transform: scale(1.4) rotate(-12deg);
+    transform: scale(1.4);
     transition: ${({ theme }) => theme.util.transition};
   `}
   @media (max-width: ${({ theme }) => theme.breakpoint.xs}px) {

@@ -34,7 +34,7 @@ const StyledInput = styled.input`
     border: 1px solid ${({ theme }) => theme.color.text.lightened};
     transition: ${({ theme }) => theme.util.transition};
   }
-`;
+`
 
 const ContactForm = () => {
   const { register, handleSubmit, watch, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm()
@@ -71,7 +71,7 @@ const ContactForm = () => {
                       <Text title large bold>Thanks for reaching out</Text>
                     </Grid>
                     <Grid item>
-                      <Text body large lightened>We're excited to talk about your project!</Text>
+                      <Text body large lightened>We&apos;re excited to talk about your project!</Text>
                     </Grid>
                   </Grid>
                 </Container>
