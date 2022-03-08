@@ -37,22 +37,24 @@ const Modal = ({
         <motion.div layout>
           <StyledContainer regular light>
             <motion.div layout>
-              <Grid container alignItems="center" justifyContent="space-between">
-                <Grid item>
-                  <Text title small bold>
-                    {title}
-                  </Text>
+              <Grid container spacing={6}>
+                <Grid item xs={12}>
+                  <Grid container alignItems="center" justifyContent="space-between">
+                    <Grid item>
+                      <Text title small bold>
+                        {title}
+                      </Text>
+                    </Grid>
+                    <Grid item>
+                      <StyledClose onClick={toggle}><Icon type="close" dark size={32} /></StyledClose>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item>
-                  <StyledClose onClick={toggle}><Icon type="close" dark size={32} /></StyledClose>
+                <Grid item xs={12}>
+                  {children}
                 </Grid>
               </Grid>
             </motion.div>
-            <Grid container mt={6}>
-              <Grid item xs={12}>
-                {children}
-              </Grid>
-            </Grid>
           </StyledContainer>
         </motion.div>
       </LayoutGroup>

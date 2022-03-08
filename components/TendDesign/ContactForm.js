@@ -8,6 +8,7 @@ import {
   Grid,
   Text,
   Button,
+  Container
 } from './ui'
 
 const StyledInput = styled.input`
@@ -35,7 +36,6 @@ const StyledInput = styled.input`
   }
 `;
 
-
 const ContactForm = () => {
   const { register, handleSubmit, watch, formState: { errors, isSubmitSuccessful, isSubmitting } } = useForm()
   const onSubmit = async (data) => {
@@ -53,23 +53,33 @@ const ContactForm = () => {
   return (
     <Grid container>
       <Grid item xs={12}>
+
           {isSubmitSuccessful ?
+
             <AnimatePresence>
               <motion.div
                 layout
+                style={{width: '100%'}}
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
                 transition={{duration: .15, delay: .15}}
               >
-                <Grid container alignItems="center" justifyContent="center">
-                  <Grid item>
-                    <Text title large bold>Thanks for reaching out!</Text>
+                <Container>
+                  <Grid container alignItems="center" justifyContent="center" spacing={4}>
+                    <Grid item>
+                      <Text title large bold>Thanks for reaching out</Text>
+                    </Grid>
+                    <Grid item>
+                      <Text body large lightened>We're excited to talk about your project!</Text>
+                    </Grid>
                   </Grid>
-                </Grid>
+                </Container>
               </motion.div>
             </AnimatePresence>
+
           :
+
             <form onSubmit={handleSubmit(onSubmit)}>
               <Grid container spacing={4}>
                 <Grid item xs={12}>
@@ -121,7 +131,9 @@ const ContactForm = () => {
                 </Grid>
               </Grid>
             </form>
+
           }
+
       </Grid>
     </Grid>
   )
