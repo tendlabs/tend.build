@@ -11,11 +11,11 @@ const StyledModal = styled(ReactModal)`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px;
 `;
 const StyledContainer = styled(Container)`
-  width: ${({ theme }) => theme.breakpoint.xs}px;
+  max-width: ${({ theme }) => theme.breakpoint.xs}px;
   position: relative;
-  margin: ${({ theme }) => theme.util.buffer*6}px;
 `;
 const StyledClose = styled.div`
   cursor: pointer;
