@@ -17,6 +17,7 @@ import CaseStudyCard from '../components/TendDesign/CaseStudyCard'
 import PortfolioCards from '../components/TendDesign/PortfolioCards'
 import NarrativePoint from '../components/TendDesign/NarrativePoint'
 import FAQ from '../components/TendDesign/FAQ'
+import CTA from '../components/TendDesign/CTA'
 import Footer from '../components/TendDesign/Footer'
 
 const Design = ({}) => {
@@ -83,6 +84,10 @@ const Design = ({}) => {
             <FAQ
               questions={commonQuestions}
             />
+          </motion.div>
+
+          <motion.div layout>
+            <CTA />
           </motion.div>
 
           <motion.div layout layoutId="faq" transition={{duration: .15}}>
