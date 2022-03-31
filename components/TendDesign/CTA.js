@@ -18,7 +18,7 @@ const CTA = ({}) => {
         <MaxWidth>
           <Grid container flexDirection="column" spacing={8}>
             <Grid item>
-              <Text title large bold>Let's work together.</Text>
+              <Text title large bold>Lets work together.</Text>
             </Grid>
             <Grid item>
               <Button onClick={() => setContactModalOpen(true)}>

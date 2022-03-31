@@ -85,12 +85,8 @@ const Design = ({}) => {
               questions={commonQuestions}
             />
           </motion.div>
-
-          <motion.div layout>
-            <CTA />
-          </motion.div>
-
           <motion.div layout layoutId="faq" transition={{duration: .15}}>
+            <CTA />
             <Footer/>
           </motion.div>
         </LayoutGroup>
