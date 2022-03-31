@@ -13,9 +13,11 @@ import Header from '../components/TendDesign/Header'
 import Hero from '../components/TendDesign/Hero'
 import SellingPoints from '../components/TendDesign/SellingPoints'
 import Statement from '../components/TendDesign/Statement'
+import CaseStudyCard from '../components/TendDesign/CaseStudyCard'
 import PortfolioCards from '../components/TendDesign/PortfolioCards'
 import NarrativePoint from '../components/TendDesign/NarrativePoint'
 import FAQ from '../components/TendDesign/FAQ'
+import CTA from '../components/TendDesign/CTA'
 import Footer from '../components/TendDesign/Footer'
 
 const Design = ({}) => {
@@ -49,19 +51,17 @@ const Design = ({}) => {
         <SellingPoints y1={y1} />
 
         <Statement
+          noPaddingBottom
           title="We build scalable value for companies large and small."
-          subtitle="Our UI systems aren’t just a collection of arbitrary components, like you might get in a popular framework. Instead we build business logic in, so you can grow faster."
+          subtitle="Our UI systems aren't just a collection of arbitrary components, like you might get in a popular framework. Instead we build business logic in, so you can grow faster."
         />
 
-        <PortfolioCards
-          y={y3}
-        />
+        <CaseStudyCard />
 
         <NarrativePoint
-          offset
           themed="lightened"
           title="A good design system is more than the sum of its parts."
-          subtitle="A design system isn’t only about creating a beautiful UI. Its equally, if not more, about supporting your team by creating a managable foundation for growth."
+          subtitle="A design system isn't only about creating a beautiful UI. Its equally, if not more, about supporting your team by creating a managable foundation for growth."
           points={DesignSystem}
         />
 
@@ -85,8 +85,8 @@ const Design = ({}) => {
               questions={commonQuestions}
             />
           </motion.div>
-
           <motion.div layout layoutId="faq" transition={{duration: .15}}>
+            <CTA />
             <Footer/>
           </motion.div>
         </LayoutGroup>
@@ -175,26 +175,30 @@ const Clarity = [
 const commonQuestions = [
   {
     question: 'What is the value of a UI System?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'A UI System empowers your team to build more quickly and with higher polish. Think of a UI System as a set of building blocks which productively constrain designers and engineers to make efficient, value-driven, decisions. Rather than having to re-invent the wheel with every new feature, a UI System brings visual unity, code consistency, and nuts-and-bolts clarity.'
   },
   {
     question: 'How is a UI System different from Brand Guidelines?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Brand Guidelines are a helpful resource for visual designers to use when designing high-fidelity mockups and assets. They help to guide a visual designer to make the right “on-brand” aesthetic decisions. A UI System, however, goes much deeper than that. UI Systems are for both designers and engineers, and are as useful in Figma as they are in the code base. They bake-in visual decisions and code patterns from the start, delivering functional value, rather than simply reference material.'
   },
   {
     question: 'Who uses a UI System?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    answer: 'Both designers and engineers are supercharged to create consistency and execute efficiently with a UI System. By creating a framework of building blocks, commonly shared and understood by both designers and engineers, a UI System bridges the gap across team members to empower more effective and higher value product development.'
   },
   {
-    question: 'Where does a UI System live?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    question: 'Where is a UI System maintained?',
+    answer: 'A UI System exists both in your product’s codebase and in your designer’s design software. It establishes a common language used across the many facets of your product’s development, understood by all.'
   },
   {
-    question: 'Should a UI System grow with your product?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    question: 'My company is growing and changing, how do I know we won’t just have to replace your UI System?',
+    answer: 'As a company grows and evolves a UI System will grow with it. A UI System isn’t a static asset to be used once, instead, it is a dynamic framework for thinking about the building blocks of your product which is designed to evolve and change.'
   },
   {
-    question: 'Why are your UI Systems better for us than a popular framework?',
-    answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    question: 'Why pay for a custom UI System over a popular framework?',
+    answer: 'Popular frameworks are designed to allow the maximum flexibility for the broadest possible use case. But your product is unique. It addresses a specific market with specific growth goals and features on the roadmap. While a popular component framework can often feel like the right choice at first, the flexibility it offers can often become a burden when your user experience needs consistency and there are too many choices on the table. Simply put, a UI System offers the same benefits of a reusable kit of parts found in most popular frameworks, but with the added value of being tailored to your specific goals and needs.'
+  },
+  {
+    question: 'Why not just get my current team to build a UI System?',
+    answer: 'If your company is anything like the other startups we’ve worked with, you need to ship features quickly to grow, your engineers and designers have limited bandwidth to spend, and the constraints are always changing. Although a UI System is incredibly valuable to a growing company the difficult calculus of prioritization remains. By building your UI System with us externally you empower your team to continue to focus on building product.'
   },
 ]
