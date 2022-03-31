@@ -72,17 +72,17 @@ export default SellingPoints
 const Point = [
   {
     title: 'Empower your team to focus on product.',
-    subtitle: 'Without the right building blocks to pick and choose from, a high-performance team might be working below their potential.',
+    subtitle: 'With the right building blocks to pick and choose from, a high-performance team can reach their full potential.',
     img: '/design/empowered-image.svg'
   },
   {
-    title: 'Everything you need, nothing you don’t.',
-    subtitle: 'High growth companies need an efficient, well curated kit of parts that are built-to-suit their unique product problem.',
+    title: 'Everything you need, nothing you don\'t.',
+    subtitle: 'High growth companies need a well chosen arsenal of building blocks that that cut out noise and deliver value immediately.',
     img: '/design/everything-image.svg'
   },
   {
     title: 'Your brand and UI, one and the same.',
-    subtitle: 'Inconsistencies result from a brand having to be interpreted over and over. Get brand into your UI once and move forward.',
+    subtitle: 'Inconsistencies result from a brand having to be interpreted over and over by those implementing it. Get brand into your UI once and move forward.',
     img: '/design/brand-ui-image.svg'
   },
 ]

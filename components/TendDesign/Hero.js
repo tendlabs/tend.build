@@ -28,15 +28,15 @@ const Hero = ({ y2 }) => {
   return (
     <>
       <MaxWidth>
-        <StyledHero container spacing={20}>
+        <StyledHero container spacing={12}>
 
           <Grid item xs={12} sm={6}>
             <Grid container spacing={12} flexDirection="column">
               <Grid item>
-                <Text title super bold><Emphasis>Custom</Emphasis> UI systems built to order.</Text>
+                <Text title super bold>Unlock growth with a <Emphasis>custom UI system.</Emphasis></Text>
               </Grid>
               <Grid item>
-                <Text title small>We build UI systems that get your business and empower your team to build quickly, without sacrificing polish in any context.</Text>
+                <Text title small>We build UI systems unique to your business and empower your team to build quickly, without sacrificing polish in any context.</Text>
               </Grid>
               <Grid item>
                 <Button onClick={() => setContactModalOpen(true)}>

@@ -61,8 +61,8 @@ const Question = ({ question, answer }) => {
             transition={{duration: .15, delay: .15}}
           >
             <Grid container>
-              <Grid item xs={12} sm={8}>
-                <Text body regular>{answer}</Text>
+              <Grid item xs={12} sm={10}>
+                <Text body large>{answer}</Text>
               </Grid>
             </Grid>
           </motion.div>

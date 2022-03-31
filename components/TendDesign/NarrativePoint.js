@@ -28,7 +28,7 @@ const StyledIconWrapper = styled.div`
 
 const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge }) => {
   return (
-    <StyledNarrativePoint>
+    <StyledNarrativePoint offset={offset}>
       <Section themed={themed}>
         <MaxWidth>
           <Grid container spacing={32}>
