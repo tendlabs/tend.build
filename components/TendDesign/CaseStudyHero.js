@@ -8,16 +8,16 @@ import {
   Section
 } from './ui'
 
-const CaseStudyHero = () => {
+const CaseStudyHero = ({ title, subtitle }) => {
   return (
     <MaxWidth>
       <Section>
         <Grid container>
           <Grid item>
-            <Text title super bold>Mighty.</Text>
+            <Text title super bold>{title}</Text>
           </Grid>
           <Grid item>
-            <Text title super bold lightened>A UI System for the internet's best lemonade stand.</Text>
+            <Text title super bold lightened>{subtitle}</Text>
           </Grid>
         </Grid>
       </Section>

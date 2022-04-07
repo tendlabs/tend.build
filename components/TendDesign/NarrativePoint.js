@@ -22,7 +22,7 @@ const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge })
         <MaxWidth>
           <Grid container spacing={32}>
 
-          {title || subtitle &&
+          {(title || subtitle) &&
             <Grid item xs={12}>
               <Statement
                 noPadding

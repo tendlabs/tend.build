@@ -29,7 +29,12 @@ import {
   ToggleRight,
   BookOpen,
   Collection,
-  Conversation
+  Conversation,
+  GitMerge,
+  Cut,
+  Trim,
+  Layout,
+  Pen
 } from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
@@ -115,6 +120,16 @@ const Icon =({
     source = <Collection />
   } else if (type === 'conversation') {
     source = <Conversation />
+  } else if (type === 'git-merge') {
+    source = <GitMerge />
+  } else if (type === 'cut') {
+    source = <Cut />
+  } else if (type === 'trim') {
+    source = <Trim />
+  } else if (type === 'pen') {
+    source = <Pen />
+  } else if (type === 'layout') {
+    source = <Layout />
   }
 
   return (

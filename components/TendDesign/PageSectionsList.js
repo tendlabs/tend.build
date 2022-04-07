@@ -18,7 +18,7 @@ const StyledPageSectionItem = styled.div`
   }
 `;
 
-const PageSectionsList = () => {
+const PageSectionsList = ({ sections }) => {
   return (
     <Section
       themed="primary"
@@ -26,7 +26,7 @@ const PageSectionsList = () => {
       <MaxWidth>
         <Grid container>
           <Grid item xs={12} sm={6}>
-            <Text title large light bold>Our Process</Text>
+            <Text title large light bold>Our Approach</Text>
           </Grid>
           <Grid item xs={12} sm={6}>
             <Container noPadding radiusRegular light>
@@ -55,22 +55,3 @@ const PageSectionsList = () => {
 }
 
 export default PageSectionsList
-
-const sections = [
-  {
-    icon: 'glasses',
-    title: 'Assess and learn'
-  },
-  {
-    icon: 'outline',
-    title: 'Spike key feature design'
-  },
-  {
-    icon: 'toggle-right',
-    title: 'Design custom components'
-  },
-  {
-    icon: 'code-block',
-    title: 'Implement and deliver'
-  },
-]

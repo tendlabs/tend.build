@@ -10,7 +10,7 @@ import {
 
 const StyledImage = styled.img`
   height: 640px;
-  filter: drop-shadow(24px 48px 48px rgba(0,0,0,.12));
+  filter: drop-shadow(24px 48px 48px rgba(0,0,0,.08));
 `;
 
 const FeatureImage = ({ reverse, caption, captionTitle, img }) => {
