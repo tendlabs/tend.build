@@ -29,7 +29,7 @@ function App({ Component, pageProps }) {
   const router = useRouter()
 
   return (
-    <ThemeProvider theme={router.pathname === '/design' ? designTheme : theme}>
+    <ThemeProvider theme={router.pathname.includes('/design') ? designTheme : theme}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,7 +40,7 @@ function App({ Component, pageProps }) {
 
         <GlobalStyle/>
 
-        <Layout lightBg={router.pathname === '/design'}>
+        <Layout lightBg={router.pathname.includes('/design')}>
           <Component key={router.pathname} {...pageProps} />
         </Layout>
 

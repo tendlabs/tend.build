@@ -8,17 +8,16 @@ import {
   MaxWidth,
   Text,
   Grid
-} from '../components/TendDesign/ui'
-import Header from '../components/TendDesign/Header'
-import Hero from '../components/TendDesign/Hero'
-import SellingPoints from '../components/TendDesign/SellingPoints'
-import Statement from '../components/TendDesign/Statement'
-import CaseStudyCard from '../components/TendDesign/CaseStudyCard'
-import PortfolioCards from '../components/TendDesign/PortfolioCards'
-import NarrativePoint from '../components/TendDesign/NarrativePoint'
-import FAQ from '../components/TendDesign/FAQ'
-import CTA from '../components/TendDesign/CTA'
-import Footer from '../components/TendDesign/Footer'
+} from '../../components/TendDesign/ui'
+import Header from '../../components/TendDesign/Header'
+import Hero from '../../components/TendDesign/Hero'
+import SellingPoints from '../../components/TendDesign/SellingPoints'
+import Statement from '../../components/TendDesign/Statement'
+import CaseStudyCard from '../../components/TendDesign/CaseStudyCard'
+import NarrativePoint from '../../components/TendDesign/NarrativePoint'
+import FAQ from '../../components/TendDesign/FAQ'
+import CTA from '../../components/TendDesign/CTA'
+import Footer from '../../components/TendDesign/Footer'
 
 const Design = ({}) => {
   const [ scrollYState, setScrollY ] = useState(0)

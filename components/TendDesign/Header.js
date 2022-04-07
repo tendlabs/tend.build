@@ -36,11 +36,13 @@ const Header = ({}) => {
 
           <Grid item>
             <Grid container alignItems="center" spacing={3}>
-              <Grid item>
-                <StyledLogo>
-                  <Icon type="layer" size={20}/>
-                </StyledLogo>
-              </Grid>
+              <Link href="/design">
+                <Grid item>
+                  <StyledLogo>
+                    <Icon type="layer" size={20}/>
+                  </StyledLogo>
+                </Grid>
+              </Link>
               <Grid item>
                 <Text title small bold primary>Tend Design</Text>
                 <Link href="/">
