@@ -4,7 +4,8 @@ import {
   Rocket,
   Megaphone,
   Layer,
-  Copy
+  Copy,
+  QuoteAltLeft
 } from '@styled-icons/boxicons-solid'
 import {
   Chart,
@@ -19,7 +20,17 @@ import {
   Search,
   Star,
   Plus,
-  X
+  X,
+  BookReader,
+  Windows,
+  Compass,
+  CodeBlock,
+  Outline,
+  ToggleRight,
+  BookOpen,
+  Collection,
+  Conversation,
+  GitMerge
 } from '@styled-icons/boxicons-regular'
 
 const StyledIcon = styled.span`
@@ -85,6 +96,28 @@ const Icon =({
     source = <Plus />
   } else if (type === 'close') {
     source = <X />
+  } else if (type === 'book-reader') {
+    source = <BookReader />
+  } else if (type === 'windows') {
+    source = <Windows />
+  } else if (type === 'compass') {
+    source = <Compass />
+  } else if (type === 'code-block') {
+    source = <CodeBlock />
+  } else if (type === 'quote') {
+    source = <QuoteAltLeft />
+  } else if (type === 'outline') {
+    source = <Outline />
+  } else if (type === 'toggle-right') {
+    source = <ToggleRight />
+  } else if (type === 'book-open') {
+    source = <BookOpen />
+  } else if (type === 'collection') {
+    source = <Collection />
+  } else if (type === 'conversation') {
+    source = <Conversation />
+  } else if (type === 'git-merge') {
+    source = <GitMerge />
   }
 
   return (

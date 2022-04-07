@@ -25,6 +25,9 @@ const StyledLogo = styled.div`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.color.primary.main};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Header = ({}) => {
@@ -36,11 +39,13 @@ const Header = ({}) => {
 
           <Grid item>
             <Grid container alignItems="center" spacing={3}>
-              <Grid item>
-                <StyledLogo>
-                  <Icon type="layer" size={20}/>
-                </StyledLogo>
-              </Grid>
+              <Link href="/design">
+                <Grid item>
+                  <StyledLogo>
+                    <Icon type="layer" size={20}/>
+                  </StyledLogo>
+                </Grid>
+              </Link>
               <Grid item>
                 <Text title small bold primary>Tend Design</Text>
                 <Link href="/">

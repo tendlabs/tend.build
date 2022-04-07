@@ -7,9 +7,9 @@ import {
   Text
 } from './ui'
 
-const Statement = ({title, subtitle, noPadding, noPaddingBottom, light }) => {
+const Statement = ({title, subtitle, noPadding, noPaddingBottom, noPaddingTop, light }) => {
   return (
-    <Section noPadding={noPadding} noPaddingBottom={noPaddingBottom}>
+    <Section noPadding={noPadding} noPaddingBottom={noPaddingBottom} noPaddingTop={noPaddingTop}>
       <MaxWidth>
         <Grid container>
           <Grid item xs={12} sm={7}>

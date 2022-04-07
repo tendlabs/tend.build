@@ -6,24 +6,13 @@ import {
   Grid,
   Text,
   Container,
-  Icon
+  Icon,
+  IconWrapper
 } from './ui'
 import Statement from './Statement'
 
 const StyledNarrativePoint = styled.div`
   transform: ${(props) => props.offset && `translateY(-${props.theme.util.buffer * 60}px)`};
-`;
-const StyledIconWrapper = styled.div`
-  width: ${({ theme }) => theme.util.buffer * 12}px;
-  height: ${({ theme }) => theme.util.buffer * 12}px;
-  background: ${(props) => props.themed === 'dark' ? props.theme.color.opacity.light4
-    : props.themed === 'lightened' ? props.theme.color.primary.lightened
-      : props.theme.color.neutral.white
-  };
-  border-radius: ${({ theme }) => theme.util.radius.large}px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge }) => {
@@ -33,6 +22,7 @@ const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge })
         <MaxWidth>
           <Grid container spacing={32}>
 
+          {(title || subtitle) &&
             <Grid item xs={12}>
               <Statement
                 noPadding
@@ -41,6 +31,7 @@ const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge })
                 light={themed === 'dark'}
               />
             </Grid>
+          }
 
             <Grid item xs={12}>
               <Grid container spacing={8} alignItems="stretch">
@@ -49,9 +40,9 @@ const NarrativePoint = ({ title, subtitle, offset, points, themed, titleLarge })
                     <Container light={themed === 'lightened'} lightened={themed === 'dark'} regular style={{height: '100%'}}>
                       <Grid container flexDirection="column" spacing={3}>
                         <Grid item>
-                          <StyledIconWrapper themed={themed}>
+                          <IconWrapper themed={themed}>
                             <Icon type={p.icon} primary={themed !== 'dark'} />
-                          </StyledIconWrapper>
+                          </IconWrapper>
                         </Grid>
                         <Grid item>
                           <Text body={!titleLarge} large={!titleLarge} title={titleLarge} regular={titleLarge} bold light={themed === 'dark'}>{p.title}</Text>
