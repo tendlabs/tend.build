@@ -25,6 +25,9 @@ const StyledLogo = styled.div`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.color.primary.main};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Header = ({}) => {
