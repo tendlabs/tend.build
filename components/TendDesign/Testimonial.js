@@ -28,7 +28,7 @@ const Testimonial = () => {
             </IconWrapper>
           </Grid>
           <Grid item>
-            <Text title regular bold>I couldn't recommend working with Tend Design on design system development enough!</Text>
+            <Text title regular bold>I couldn&apos;t recommend working with Tend Design on design system development enough!</Text>
           </Grid>
           <Grid item>
             <Text body large>From their code and design unicorn-like studio offering, to their hands on approach from day one, Tend Design was able to seamlessly build trust with members of our team. This resulted in a custom built solution that feels true to our brand, unblocked our roadmap for more meaningful feature work, and empowered our teams.</Text>

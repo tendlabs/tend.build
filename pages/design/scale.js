@@ -42,7 +42,7 @@ const Mighty = () => {
           subtitle="An MVP and UI System for Scale Platform, the best place for attorneys to connect."
         />
 
-        <CaseStudyCard img={ScaleHero} />
+        <CaseStudyCard img={scaleHero} />
 
         <Statement
           title="Context"
@@ -153,7 +153,7 @@ const Mighty = () => {
 export default Mighty
 
 const mightyHero = '/design/case-studies/mighty-cover.png'
-const ScaleHero = '/design/case-studies/scale-cover.png'
+const scaleHero = '/design/case-studies/scale-cover.png'
 const scale1 = '/design/case-studies/scale-feature-1.png'
 const scale2 = '/design/case-studies/scale-feature-2.png'
 const scaleMessages = '/design/case-studies/scale-messages.png'
