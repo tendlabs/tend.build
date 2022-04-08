@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 import { LayoutGroup, useViewportScroll, useTransform, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -8,17 +9,16 @@ import {
   MaxWidth,
   Text,
   Grid
-} from '../components/TendDesign/ui'
-import Header from '../components/TendDesign/Header'
-import Hero from '../components/TendDesign/Hero'
-import SellingPoints from '../components/TendDesign/SellingPoints'
-import Statement from '../components/TendDesign/Statement'
-import CaseStudyCard from '../components/TendDesign/CaseStudyCard'
-import PortfolioCards from '../components/TendDesign/PortfolioCards'
-import NarrativePoint from '../components/TendDesign/NarrativePoint'
-import FAQ from '../components/TendDesign/FAQ'
-import CTA from '../components/TendDesign/CTA'
-import Footer from '../components/TendDesign/Footer'
+} from '../../components/TendDesign/ui'
+import Header from '../../components/TendDesign/Header'
+import Hero from '../../components/TendDesign/Hero'
+import SellingPoints from '../../components/TendDesign/SellingPoints'
+import Statement from '../../components/TendDesign/Statement'
+import CaseStudyCard from '../../components/TendDesign/CaseStudyCard'
+import NarrativePoint from '../../components/TendDesign/NarrativePoint'
+import FAQ from '../../components/TendDesign/FAQ'
+import CTA from '../../components/TendDesign/CTA'
+import Footer from '../../components/TendDesign/Footer'
 
 const Design = ({}) => {
   const [ scrollYState, setScrollY ] = useState(0)
@@ -40,6 +40,13 @@ const Design = ({}) => {
     <>
       <Head>
         <title>Tend Design</title>
+        <meta name="title" content="Tend" />
+        <meta property="og:site_name" content="Tend" key="og_tend_site_name" />
+        <meta name="description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." />
+        <meta name="keywords" content="Product Design, Minimum Viable Product, MVP, Startup, Tech, Software, Engineering, Design, Product, App" />
+        <meta property="og:title" content="Tend" key="og_tend_site_title" />
+        <meta property="og:description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." key="og_tend_site_description" />
+        <meta property="og:image" content={TendDesignUnfurl} key="og_tend_site_image" />
       </Head>
 
       <PageContainer noPadding>
@@ -51,12 +58,20 @@ const Design = ({}) => {
         <SellingPoints y1={y1} />
 
         <Statement
-          noPaddingBottom
           title="We build scalable value for companies large and small."
           subtitle="Our UI systems aren't just a collection of arbitrary components, like you might get in a popular framework. Instead we build business logic in, so you can grow faster."
         />
 
-        <CaseStudyCard />
+        {caseStudies.map((c, i) =>
+          <CaseStudyCard
+            key={i}
+            img={c.img}
+            title={c.title}
+            description={c.description}
+            route={c.route}
+          />
+        )}
+
 
         <NarrativePoint
           themed="lightened"
@@ -99,6 +114,8 @@ const Design = ({}) => {
 }
 
 export default Design
+
+const TendDesignUnfurl = '/design/tend-design-unfurl'
 
 const DesignSystem = [
   {
@@ -200,5 +217,30 @@ const commonQuestions = [
   {
     question: 'Why not just get my current team to build a UI System?',
     answer: 'If your company is anything like the other startups we’ve worked with, you need to ship features quickly to grow, your engineers and designers have limited bandwidth to spend, and the constraints are always changing. Although a UI System is incredibly valuable to a growing company the difficult calculus of prioritization remains. By building your UI System with us externally you empower your team to continue to focus on building product.'
+  },
+]
+
+const caseStudies = [
+  {
+    title: 'Mighty',
+    description: 'We designed, built, and shipped a scalable UI system for the growing startup. We translated brand guidelines in a UI system designed for speed by working closely with the Mighty engineering team to ship it to production.',
+    img: '/design/case-studies/mighty-cover.png',
+    route: '/design/mighty'
+  },
+  {
+    title: 'Scale Platform',
+    description: 'We visioned and built an MVP working closely with the founder to conceptualize and execute on product vision. We developed a scalable UI system to support faster MVP development and shipped a production app in weeks.',
+    img: '/design/case-studies/scale-cover.png',
+    route: '/design/scale'
+  },
+  {
+    title: 'Wildflower Schools',
+    description: 'We visioned and built an MVP faster with a scalable UI system. We developed high fidelity pitch materials to communicate the product vision and shipped a demoable MVP with a bespoke set of UI elements.',
+    img: '/design/case-studies/wf-cover.png'
+  },
+  {
+    title: 'Access Clean California',
+    description: 'We proved government software can be accessible and beautiful by building a modern UI system. We transformed an inherited tech stack with stale patterns into a modern app with robust design, fundamentally improving the product, and overhauling UX with a systems lens.',
+    img: '/design/case-studies/acc-cover.png'
   },
 ]
