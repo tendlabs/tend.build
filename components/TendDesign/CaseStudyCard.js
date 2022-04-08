@@ -6,7 +6,8 @@ import {
   Text,
   MaxWidth,
   Container,
-  Section
+  Section,
+  Button
 } from './ui'
 
 const StyledImage = styled.img`
@@ -67,9 +68,11 @@ const CaseStudyCard = ({ img, title, description, route }) => {
                       <Text body large>{description}</Text>
                     </Grid>
                     {route ?
-                      <Grid item>
+                      <Grid item mt={6}>
                         <ConditionalLink link={route}>
-                          <Text body regular bold>View Case Study</Text>
+                          <Button lightened>
+                            <Text body large bold primary>View {title} case study</Text>
+                          </Button>
                         </ConditionalLink>
                       </Grid>
                     :
