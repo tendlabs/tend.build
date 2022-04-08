@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 import {
   PageContainer,
@@ -21,107 +22,141 @@ import Footer from '../../components/TendDesign/Footer'
 
 const Mighty = () => {
   return (
-    <PageContainer noPadding>
+    <>
+      <Head>
+        <title>Tend Design | Mighty</title>
+        <meta name="title" content="Tend" />
+        <meta property="og:site_name" content="Tend" key="og_tend_site_name" />
+        <meta name="description" content="A UI System for the internet's best lemonade stand." />
+        <meta name="keywords" content="Product Design, Minimum Viable Product, MVP, Startup, Tech, Software, Engineering, Design, Product, App" />
+        <meta property="og:title" content="Tend" key="og_tend_site_title" />
+        <meta property="og:description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." key="og_tend_site_description" />
+        <meta property="og:image" content={mightyHero} key="og_tend_site_image" />
+      </Head>
 
-      <Header />
+      <PageContainer noPadding>
 
-      <CaseStudyHero
-        title="Mighty."
-        subtitle="A UI System for the internet's best lemonade stand."
-      />
+        <Header />
 
-      <CaseStudyCard img={mightyHero} />
+        <CaseStudyHero
+          title="Mighty."
+          subtitle="A UI System for the internet's best lemonade stand."
+        />
 
-      <Statement
-        title="Context"
-        subtitle="As startup with a mission to empower kids through entrepreneurship, Mighty had built an exciting MVP with clear traction. Mighty had brand guidelines in-hand but needed to conform their UI in order to achieve consistency. Without an internal design team, they didn’t have the time or resources available to do it in-house."
-        noPaddingBottom
-        noPaddingTop
-      />
+        <CaseStudyCard img={mightyHero} />
 
-      <NarrativePoint
-        themed="light"
-        points={Context}
-      />
+        <Statement
+          title="Context"
+          subtitle="As startup with a mission to empower kids through entrepreneurship, Mighty had built an exciting MVP with clear traction. Mighty had brand guidelines in-hand but needed to conform their UI in order to achieve consistency. Without an internal design team, they didn’t have the time or resources available to do it in-house."
+          noPaddingBottom
+          noPaddingTop
+        />
 
-      <Section noPaddingTop>
-        <Testimonial />
-      </Section>
+        <NarrativePoint
+          themed="light"
+          points={Context}
+        />
 
-      <PageSectionsList sections={PageSections} />
+        <Section noPaddingTop>
+          <Testimonial />
+        </Section>
 
-      <Statement
-        title="Assess and learn"
-        subtitle="We started by doing everything we could to understand Mighty’s business. Our initial product discovery process consisted of the following materials and actions."
-        noPaddingBottom
-      />
+        <PageSectionsList sections={PageSections} />
+
+        <Statement
+          title="Assess and learn"
+          subtitle="We started by doing everything we could to understand Mighty’s business. Our initial product discovery process consisted of the following materials and actions."
+          noPaddingBottom
+        />
 
 
-      <NarrativePoint
-        themed="light"
-        points={AssessPoints}
-      />
+        <NarrativePoint
+          themed="light"
+          points={AssessPoints}
+        />
 
-      <Statement
-        noPaddingTop
-        title="Spike key feature design"
-        subtitle="We started by doing everything we could to understand Mighty’s business. Our initial product discovery process consisted of the following materials and actions."
-      />
+        <Statement
+          noPaddingTop
+          title="Spike key feature design"
+          subtitle="We started by doing everything we could to understand Mighty’s business. Our initial product discovery process consisted of the following materials and actions."
+        />
 
-      <FeatureImage
-        captionTitle="A unique Product List Page"
-        caption="Identifying special moments on the PLP to integrate unique components."
-        img={mighty1}
-      />
+        <FeatureImage
+          captionTitle="A unique Product List Page"
+          caption="Identifying special moments on the PLP to integrate unique components."
+          img={mighty1}
+        />
 
-      <FeatureImage
-        captionTitle="Special UI to educate kids."
-        caption="Since Mighty’s users are children, we designed effective cards to tell the story of running a business."
-        img={mighty2}
-        reverse
-      />
+        <FeatureImage
+          captionTitle="Special UI to educate kids."
+          caption="Since Mighty’s users are children, we designed effective cards to tell the story of running a business."
+          img={mighty2}
+          reverse
+        />
 
-      <Statement
-        title="Design custom components"
-        subtitle="By analyzing Mighty’s business context and developing an understanding of their roadmap we devised a curated list of components to empower engineers and move the needle."
-        noPaddingBottom
-        noPaddingTop
-      />
+        <Statement
+          title="Design custom components"
+          subtitle="By analyzing Mighty’s business context and developing an understanding of their roadmap we devised a curated list of components to empower engineers and move the needle."
+          noPaddingBottom
+          noPaddingTop
+        />
 
-      <Section>
-        <MaxWidth>
-          <Container regular>
-            <img src={mightyComponents} style={{width: '100%'}}/>
-          </Container>
-        </MaxWidth>
-      </Section>
+        <Section>
+          <MaxWidth>
+            <Container regular>
+              <img src={mightyComponents} style={{width: '100%'}}/>
+            </Container>
+          </MaxWidth>
+        </Section>
 
-      <Statement
-        title="Implement and deliver"
-        subtitle="We worked closely with Mighty’s engineers to craft exactly the right patterns and technical approaches to building their UI System. We executed a process that resulted in a UI system customized to them that works with their codebase."
-        noPaddingBottom
-        noPaddingTop
-      />
+        <Statement
+          title="Implement and deliver"
+          subtitle="We worked closely with Mighty’s engineers to craft exactly the right patterns and technical approaches to building their UI System. We executed a process that resulted in a UI system customized to them that works with their codebase."
+          noPaddingBottom
+          noPaddingTop
+        />
 
-      <NarrativePoint
-        themed="light"
-        points={Implement}
-      />
+        <NarrativePoint
+          themed="light"
+          points={Implement}
+        />
 
-      <Statement
-        title="We delivered a scalable UI system to Mighty, unblocking their team to build product."
-      />
+        <Statement
+          title="We delivered a scalable UI system to Mighty, unblocking their team to build product."
+        />
 
-      <CTA />
+        <Section>
+          <MaxWidth>
+            <Link href="/design/scale">
+              <a>
+                <Grid container spacing={6}>
+                  <Grid item>
+                    <Text title regular bold lightened>Next case study</Text>
+                    <Text title regular bold>Scale Platform</Text>
+                  </Grid>
+                  <Grid item>
+                    <Container noPadding>
+                      <img src={scaleHero} style={{width: '100%'}}/>
+                    </Container>
+                  </Grid>
+                </Grid>
+              </a>
+            </Link>
+          </MaxWidth>
+        </Section>
 
-      <Footer/>
+        <CTA />
 
-    </PageContainer>
+        <Footer/>
+
+      </PageContainer>
+    </>
   )
 }
 
 export default Mighty
 
+const scaleHero = '/design/case-studies/scale-cover.png'
 const mightyHero = '/design/case-studies/mighty-cover.png'
 const mighty1 = '/design/case-studies/mighty-feature-1.png'
 const mighty2 = '/design/case-studies/mighty-feature-2.png'

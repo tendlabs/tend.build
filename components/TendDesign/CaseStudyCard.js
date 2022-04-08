@@ -45,10 +45,10 @@ const CaseStudyCard = ({ img, title, description, route }) => {
   return (
     <MaxWidth>
       <Section noPaddingTop>
-        <Grid container spacing={12}>
+        <Grid container>
 
           <ConditionalLink link={route}>
-            <Grid item xs={12}>
+            <Grid item xs={12} mb={12}>
               <StyledContainer>
                 <StyledImage src={img} />
               </StyledContainer>

@@ -40,6 +40,13 @@ const Design = ({}) => {
     <>
       <Head>
         <title>Tend Design</title>
+        <meta name="title" content="Tend" />
+        <meta property="og:site_name" content="Tend" key="og_tend_site_name" />
+        <meta name="description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." />
+        <meta name="keywords" content="Product Design, Minimum Viable Product, MVP, Startup, Tech, Software, Engineering, Design, Product, App" />
+        <meta property="og:title" content="Tend" key="og_tend_site_title" />
+        <meta property="og:description" content="We are founders, builders and operators who can provide your organization with product design, engineering, and strategy expertise to help your product thrive." key="og_tend_site_description" />
+        <meta property="og:image" content={TendDesignUnfurl} key="og_tend_site_image" />
       </Head>
 
       <PageContainer noPadding>
@@ -107,6 +114,8 @@ const Design = ({}) => {
 }
 
 export default Design
+
+const TendDesignUnfurl = '/design/tend-design-unfurl'
 
 const DesignSystem = [
   {
@@ -221,7 +230,8 @@ const caseStudies = [
   {
     title: 'Scale Platform',
     description: 'We visioned and built an MVP working closely with the founder to conceptualize and execute on product vision. We developed a scalable UI system to support faster MVP development and shipped a production app in weeks.',
-    img: '/design/case-studies/scale-cover.png'
+    img: '/design/case-studies/scale-cover.png',
+    route: '/design/scale'
   },
   {
     title: 'Wildflower Schools',
