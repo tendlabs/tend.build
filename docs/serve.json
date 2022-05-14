@@ -1,0 +1,10 @@
+{
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/www/:p1", "destination": "/:p1" },
+    { "source": "/www/:p1/:p2", "destination": "/:p1/:p2" },
+    { "source": "/www/:p1/:p2/:p3", "destination": "/:p1/:p2/:p3" },
+    { "source": "/www/:p1/:p2/:p3/:p4", "destination": "/:p1/:p2/:p3/:p4" },
+    { "source": "/www/:p1/:p2/:p3/:p4/:p5", "destination": "/:p1/:p2/:p3/:p4/:p5" }
+  ]
+}
