@@ -98,11 +98,11 @@ export async function getStaticProps(context) {
           url: 'https://www.littleuniverse.com/'
         },
         {
-          title: 'Tend Design',
-          description: 'We create curated design systems conceptualized, built, and shipped for our client’s products. We believe that when you need to move fast, constraint is empowering. We ship the polished building blocks that unify a team and empower growth.',
+          title: 'Parts',
+          description: 'Realize your vision in half the time with custom components. Best in class responsive and accessible components, customized to your app and UX, so that you can focus on your specialty.',
           type: 'Systems',
           icon: 'layer',
-          url: '/design'
+          url: 'https://parts.studio/'
         },
         {
           title: 'Tend Labs',
